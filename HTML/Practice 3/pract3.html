@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Practice 3</title>
+    
+    <style>
+        body {
+            margin-top: 200px;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1" cellspacing="0" align="center">
+        
+        <caption>
+            Example : Nested 
+        </caption>
+
+        <tbody>
+            <!-- row 1 -->
+            <tr>
+                <th colspan="2" rowspan="2">CI</th>
+                <th rowspan="2">All <br> Genders</th>
+                <th colspan="2">By Genders</th>
+            </tr>
+
+            <!-- row 2 -->
+            <tr>
+                <td>
+                    <!-- created table inside table -->
+                    <table border="1px">
+                        <tr>
+                            <th >Males</th>
+                            <th >Females</th>
+                        </tr>
+                        <tr>
+                            <td >9215604</td>
+                            <td >4512358</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <!-- row 3 -->
+            <tr>
+                <th >Rules</th>
+                <td >6521458</td>
+                <td align="center">4215389</td>
+                <td colspan="2" align="center">4152348</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+table{
+    border: 1px solid black;
+    padding: 2px 2px 0px 2px;
+}
+
+h4 {
+    margin-left: 285px;
+}
+
+.head {
+    text-align: left;
+    background-color: lightgreen;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.company {
+    background-color: skyblue;
+    font-weight: 600;
+}
+
+.collaborator {
+    background-color: rgb(240, 232, 232);
+}
+
+.cell {
+    background-color: rgb(209, 158, 158);
+}
+
+.applications {
+    background-color: rgb(248, 248, 196);
+}
