@@ -1,0 +1,29 @@
+.img{
+    background-color: rgb(44, 39, 39);
+    width: 215px;
+    height: 315px;
+  }
+  .image-gallery{
+   align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .center{
+    position: relative;
+    top: 50%;  
+    color: #fff;
+  }
+  .box{
+    padding-top: 2px;
+    margin: 10px;
+  }
+  #main{
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+  }
+  .text{
+    width: 66%;
+    text-align: center;
+    margin-left: 240px;
+  }
