@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    max-width: 514px;
+    margin: 154px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    position: absolute;
+    left: 436px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contactUs {
+    background-image: url(https://i.pinimg.com/originals/b7/17/b4/b717b4e200b11c5a88f7373a42e481bf.jpg);
+    width: 91%;
+    padding: 22px;
+    margin: 100px;
+    position: absolute;
+    top: -227px;
+    left: -101px;
+    text-align: center;
+}
+
+h1 {
+    position: relative;
+    top: 2px;
+    left: 2px;
+}
+
+.contact-form {
+    display: grid;
+    grid-gap: 7px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    padding-left: 40px;
+}
+
+input[type="submit"] {
+    background-color: #8a54e1;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 77px;
+    width: 143px;
+    padding-left: 10px;
+    position: absolute;
+    left: 161px;
+    border-color: #8a54e1;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.input-icons i {
+    position: absolute;
+}
+
+.input-icons {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.icon {
+    padding: 10px;
+    min-width: 40px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+input[type="text"] {
+    width: 100%;
+    border: 1px solid #7a7a7a;
+    border-radius: 4px;
+    /* margin: 8px 0; */
+    outline: none;
+    padding: 13px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: dodgerBlue;
+    box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
+.inputWithIcon input[type="text"] {
+    padding-left: 40px;
+}
+
+.inputWithIcon input[type="email"] {
+    padding-left: 40px;
+}
+
+.inputWithIcon input[type="tel"] {
+    padding-left: 40px;
+}
+
+.inputWithIcon {
+    position: relative;
+}
+
+.inputWithIcon i {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    padding: 9px 8px;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+.inputWithIcon input[type="text"]:focus+i {
+    color: dodgerBlue;
+}
+
+.inputWithIcon.inputIconBg i {
+    background-color: #aaa;
+    color: #fff;
+    padding: 9px 4px;
+    border-radius: 4px 0 0 4px;
+}
+
+.inputWithIcon.inputIconBg input[type="text"]:focus+i {
+    color: #fff;
+    background-color: dodgerBlue;
+}
+
+.form-group input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+.form-group input[type="submit"]:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}

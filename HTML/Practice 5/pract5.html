@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HTML Practice 5 - Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="contactUs">
+            <h1>CONTACT US</h1>
+        </div>
+
+        <form action="#" method="post" class="contact-form">
+            <!-- full name -->
+            <div class="inputWithIcon">
+                <input type="text" name="fullName" id="fname" placeholder="Full Name" required>
+                <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
+              </div>
+              
+              <!-- email -->
+              <div class="inputWithIcon">
+                <input type="email" name="email" id="email" placeholder="Eg. example@email.com" required>
+                <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+              </div>
+              
+              <!-- Phone Number -->
+              <div class="inputWithIcon">
+                <input type="tel" name="pnum" id="pnum" placeholder="Eg. +1800 000000">
+                <i class="fa fa-phone fa-lg fa-fw" aria-hidden="true"></i>
+              </div>
+            
+                <!-- Comments -->
+                <div class="inputWithIcon">
+                    <i class="fa fa-comment" aria-hidden="true"></i>
+                    <textarea name="comments" id="comments" cols="50" rows="10" wrap="hard"
+                        placeholder="Your Comments..."></textarea>
+                </div>
+
+                <!-- Button -->
+                <div class="form-group">
+                    <input type="submit" onclick="submitForm()" name="send" value="SEND NOW">
+                </div>
+
+                <script>
+                    // JavaScript function to display alert
+                    function submitForm() {
+                        alert("Your request has been submitted!");
+                    }
+                </script>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
