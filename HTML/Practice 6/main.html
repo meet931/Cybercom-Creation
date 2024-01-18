@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HTML Practice 6 - Fieldset Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function handleSubmit() {
+            setTimeout(function () {
+                window.location.href = 'success.html';
+            }, 2000);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Form</h1>
+
+    <form action="#" method="POST" onsubmit="handleSubmit(); return false;">
+        <!-- 1st fieldset -->
+        <fieldset>
+            <legend>Your Address</legend>
+
+            <table>
+                <!-- fname -->
+                <tr>
+                    <td><label for="fname">First name</label></td>
+                    <td><input type="text" class="data" name="fname" id="fname" required></td>
+                </tr>
+
+                <!-- lname -->
+                <tr>
+                    <td><label for="lname">Last name</label></td>
+                    <td><input type="text" class="data" name="lname" id="lname" required></td>
+                </tr>
+
+                <!-- street -->
+                <tr>
+                    <td><label for="street">Street</label></td>
+                    <td><input type="text" class="data" name="street" id="street" required></td>
+                </tr>
+
+                <!-- city -->
+                <tr>
+                    <td><label for="city">City</label></td>
+                    <td><input type="text" class="data" name="city" id="city" required></td>
+                </tr>
+            </table>
+            </div>
+        </fieldset>
+
+        <!-- 2st fieldset -->
+        <fieldset>
+            <legend>Additional details</legend>
+            <table>
+                <!-- Biography -->
+                <tr>
+                    <td><label for="biography">Biography</label></td>
+                    <td><textarea name="biography" class="data" id="biography" cols="20" rows="2"></textarea></td>
+                </tr>
+
+                <!-- Image -->
+                <tr>
+                    <td><label for="img">Image</label></td>
+                    <td><input type="file" class="data" name="img" id="img" required></td>
+                </tr>
+
+                <!-- Age Group -->
+                <tr>
+                    <td><label for="age_group">Age Group</label></td>
+                    <td>
+                        <select name="age_group" id="age_group" class="data">
+                            <option value="0 to 9">0 to 9 Years</option>
+                            <option value="10 to 20">10 to 20 Years</option>
+                            <option value="21 to 40">21 to 40 Years</option>
+                            <option value="41 to 65">41 to 65 Years</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <!-- 3st fieldset -->
+        <fieldset>
+            <legend>Interest</legend>
+            <table>
+                <!-- Hobbies -->
+                <tr>
+                    <td><label for="hobbies">Hobbies</label></td>
+                    <td>
+                        <select name="hobbies" id="hobbies" multiple="" class="data2">
+                            <option value="playing_soccer">Playing soccer</option>
+                            <option value="dancing">Dancing</option>
+                            <option value="gardening">Gardening</option>
+                            <option value="watching_movies">Watching movies</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <!-- Favourite car? -->
+                <tr>
+                    <td><label for="fav_car">Favourite car?</label></td>
+                    <td>
+                        <select name="fav_car" id="fav_car" class="data2">
+                            <option value="volvo">Volvo</option>
+                            <option value="audi">Audi</option>
+                            <option value="bmw">BMW</option>
+                            <option value="mercedes">Mercedes</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <!-- Favourite public transport? -->
+                <tr>
+                    <td><label for="fav_tansport">Favourite public transport?</label></td>
+                    <td>
+                        <select name="fav_car" id="fav_car" multiple="" class="data2">
+                            <option value="volvo">Ground</option>
+                            <option value="audi">&nbsp;&nbsp;Train</option>
+                            <option value="bmw">&nbsp;&nbsp;Bus</option>
+                            <option value="mercedes">Water</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <!-- Buttons -->
+        <div class="button">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+
+        </div>
+    </form>
+</body>
+
+</html>
