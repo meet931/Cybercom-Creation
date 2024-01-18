@@ -115,10 +115,11 @@
                     <td><label for="fav_tansport">Favourite public transport?</label></td>
                     <td>
                         <select name="fav_car" id="fav_car" multiple="" class="data2">
-                            <option value="volvo">Ground</option>
-                            <option value="audi">&nbsp;&nbsp;Train</option>
-                            <option value="bmw">&nbsp;&nbsp;Bus</option>
-                            <option value="mercedes">Water</option>
+                            <optgroup label="Ground">
+                                <option>Train</option>
+                                <option>Bus</option>
+                            </optgroup>
+                            <optgroup label="Water"></optgroup>
                         </select>
                     </td>
                 </tr>
