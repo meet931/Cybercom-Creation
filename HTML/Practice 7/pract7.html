@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTML Practice 7 - Form</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <form action="information.php">
+
+        <!-- Personal Information -->
+        <h3>Personal Information</h3>
+        <div class="container1">
+            <table>
+                <!-- fname -->
+                <tr>
+                    <td class="variable"><label for="fname">First Name:</label></td>
+                    <td><input type="text" class="c1data c1data2" id="fname" name="fname" required></td>
+                </tr>
+
+                <!-- lname -->
+                <tr>
+                    <td class="variable"><label for="lname">Last Name:</label></td>
+                    <td><input type="text" class="c1data c1data2" id="lname" name="lname"></td>
+                </tr>
+
+                <!-- Date of Birth -->
+                <tr>
+                    <td><label for="dob">Date of Birth:</label></td>
+                    <!-- Month -->
+                    <td>
+                        <select class="dob-select c1data" name="month" id="month" required>
+                            <option value="" disabled selected>Month</option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+
+                        <!-- Day -->
+                        <select class="dob-select c1data" name="day" id="day" required>
+                            <option value="" aria-placeholder="" disabled selected>Day</option>
+                        </select>
+
+                        <!-- Years -->
+                        <select class="dob-select c1data" name="year" id="year">
+                            <option value="" disabled selected>Year</option>
+                        </select>
+                    </td>
+                    <td><i class="fa fa-question-circle" aria-hidden="true"></i></td>
+                </tr>
+
+                <!-- gender -->
+                <tr>
+                    <td class="variable"><label for="gender">Gender:</label></td>
+                    <td>
+                        <select class="c1data c1data2" name="gender" id="gender">
+                            <option value="choose" disabled selected>Choose a gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Male">Female</option>
+                        </select>
+                    </td>
+                    <td><i class="fa fa-question-circle" aria-hidden="true"></i></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Account Information -->
+        <div class="container2">
+            <h3>Account Information</h3>
+            <table>
+                <!-- email -->
+                <tr>
+                    <td class="variable"><label for="email">Email:</label></td>
+                    <td><input type="email" class="c2data" id="email" name="email" required> <br>
+                        <font>(Your email address will be your username)</font>
+                    </td>
+                </tr>
+
+                <!-- re-type email -->
+                <tr>
+                    <td class="variable"><label for="re-type_email">Re-type Email:</label></td>
+                    <td><input type="email" class="c2data" id="re-type_email" name="re-type_email"></td>
+                </tr>
+
+                <!-- password -->
+                <tr>
+                    <td class="variable"><label for="pwd">Password:</label></td>
+                    <td><input type="password" class="c2data" id="pwd" name="pwd" required><br>
+                        <font>(Min 8 characters, 1 number, case-sensitive)</font>
+                    </td>
+                </tr>
+
+                <!-- re-type password -->
+                <tr>
+                    <td class="variable"><label for="re-type_pwd">Re-type Password:</label></td>
+                    <td><input type="password" class="c2data" id="re-type_pwd" name="re-type_pwd"></td>
+                </tr>
+
+                <!-- Security Quetion -->
+                <tr>
+                    <td class="variable"><label for="email">Security Question:</label></td>
+                    <td>
+                        <select class="c2data" name="quetion" id="quetion">
+                            <option value="" disabled selected>Choose a security question</option>
+                            <option value="que1">What is favourite colour?</option>
+                            <option value="que2">What is nick name?</option>
+                            <option value="que3">what is your first school name?</option>
+                        </select>
+                    </td>
+                    <td><i class="fa fa-question-circle" aria-hidden="true"></i></td>
+                </tr>
+
+                <!-- Security Answer -->
+                <tr>
+                    <td class="variable"><label for="ans">Security Answer:</label></td>
+                    <td><input type="text" class="c2data" id="ans" name="ans"><br>
+                        <font>(Not case-sensitive)</font>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="container3">
+            <h3 id="h3">Contact Information</h3>
+            <table class="t3">
+                <!-- Address -->
+                <tr>
+                    <td class="variable"><label for="address">Address:</label></td>
+                    <td><input type="text" class="c3data" name="address" id="address"></td>
+                </tr>
+
+                <!-- city -->
+                <tr>
+                    <td class="variable"><label for="city">City:</label></td>
+                    <td><input type="text" class="c3data" name="city" id="city"></td>
+                </tr>
+
+                <!-- State -->
+                <tr>
+                    <td class="variable"><label for="state">State:</label></td>
+                    <td>
+                        <select class="c3data" name="state" id="state">
+                            <option value="" disabled selected>Choose a state</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Maharastra">Maharastra</option>
+                            <option value="Rajesthan">Rajesthan</option>
+                            <option value="Madhyapradesh">Madhyapradesh</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <!-- Zip Code -->
+                <tr>
+                    <td class="variable"><label for="zip">Zip Code:</label></td>
+                    <td><input type="text" class="c3data" name="zip" id="zip"></td>
+                    <td><input type="text" class="c3data" name="zip" id="zip2" placeholder="Optional" required></td>
+
+                </tr>
+
+                <!-- Phone -->
+                <tr>
+                    <td class="variable" id="ph"><label for="phone">Phone:</label></td>
+                    <td><input type="text" class="c3data" name="phone" id="phone" required><br>
+                        <font>No spaces or dashes</font>
+                    </td>
+                    <td id="drpMobile"><i class="fa fa-question-circle" aria-hidden="true"></i>
+                        <select name="mobile" id="mobile" required>
+                            <option value="mobile">Mobile</option>
+                            <option value="landline">Landline</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+    </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

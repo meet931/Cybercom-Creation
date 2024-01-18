@@ -1,0 +1,114 @@
+form {
+    border: 1px solid black;
+    padding: 23px 30px;
+    position: relative;
+    left: 400px;
+    width: 39%;
+    background-color: rgb(233, 224, 225);
+}
+
+.variable {
+    text-align: right;
+}
+
+.t3 {
+    position: relative;
+    left: 23px;
+}
+
+.container1, .container3 {
+    position: relative;
+    left: 32px;
+}
+
+.c1data, .c2data, .c3data {
+    margin: 5px;
+}
+
+.c1data2, .c2data, .c3data {
+    width: 225px;
+}
+
+font {
+    position: relative;
+    top: -5px;
+    left: 6px;
+    font-size:small;
+    color:#6e6a6a;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    /* If you want dots under the hoverable text */
+}
+
+.fa-question-circle {
+    color: rgb(31, 148, 194);
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .container1,
+    .container2,
+    .container3 {
+        width: 100%;
+    }
+
+    .container1 table,
+    .container2 table,
+    .container3 table {
+        width: 100%;
+    }
+
+    .container1 td,
+    .container2 td,
+    .container3 td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .dob-select,
+    .c1data,
+    .data {
+        width: 100%;
+    }
+}
+
+#ph, #mobile, #drpMobile {
+    position: relative;
+    top: -4px;
+}
+
+#h3 {
+    position: relative;
+    left: -28px;
+}
+
+#zip, #zip2 {
+    width: 55px;
+}
+
+#zip2 {
+    position: relative;
+    left: -170px;
+}
