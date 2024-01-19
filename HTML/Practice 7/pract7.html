@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <form action="information.php">
+    <form action="#" method="post" onsubmit="handleSubmit(); return false;">
 
         <!-- Personal Information -->
         <h3>Personal Information</h3>
@@ -53,7 +53,7 @@
 
                         <!-- Day -->
                         <select class="dob-select c1data" name="day" id="day" required>
-                            <option value="" aria-placeholder="" disabled selected>Day</option>
+                            <option value="" disabled selected>Day</option>
                         </select>
 
                         <!-- Years -->
@@ -169,7 +169,7 @@
                 <tr>
                     <td class="variable"><label for="zip">Zip Code:</label></td>
                     <td><input type="text" class="c3data" name="zip" id="zip"></td>
-                    <td><input type="text" class="c3data" name="zip" id="zip2" placeholder="Optional" required></td>
+                    <td><input type="text" class="c3data" name="zip" id="zip2" placeholder="Optional"></td>
 
                 </tr>
 
@@ -187,6 +187,13 @@
                     </td>
                 </tr>
             </table>
+            
+            <!-- Buttons -->
+            <div class="button">
+                <input type="submit" value="Submit" id="submit">
+                <input type="reset" value="Reset" id="reset">  
+            </div>
+        </div>
     </form>
     </div>
 
