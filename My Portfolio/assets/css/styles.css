@@ -242,7 +242,7 @@ img {
   font-size: var(--big-font-size);
   margin-bottom: var(--mb-5);
   position: relative;
-  right: 75px;
+  right: 0px;
 }
 
 .home-title-color {
@@ -694,7 +694,7 @@ img.man-icons {
     flex-direction: row;
     align-self: flex-end;
     position: relative;
-    right: 75px;
+    right: 0px;
   }
 
   .home-social-icon {
@@ -704,7 +704,7 @@ img.man-icons {
 
   .home-img {
     width: 39%;
-    max-width: 420px;
+    max-width: 403px;
     bottom: 15%;
   }
 
