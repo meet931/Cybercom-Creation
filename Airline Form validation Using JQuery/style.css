@@ -10,7 +10,7 @@ body {
 }
 
 form {
-    max-width: 400px;
+    max-width: 625px;
     margin: 20px auto;
     background-color: #fff;
     padding: 20px;
@@ -22,6 +22,8 @@ h1 {
     font-size: 1.5em;
     font-weight: bold;
     color: #4caf50;
+    position: relative;
+    left: 0.8rem;
 }
 
 label {
@@ -34,6 +36,8 @@ input[type="email"],
 input[type="url"],
 input[type="tel"],
 input[type="password"],
+input[type="number"],
+input[type="date"],
 select {
     width: 100%;
     padding: 8px;
@@ -43,7 +47,7 @@ select {
     border-radius: 4px;
 }
 
-input[type="submit"] {
+button {
     background-color: #4caf50;
     color: #fff;
     padding: 10px 15px;
@@ -53,9 +57,9 @@ input[type="submit"] {
     display: flex;
     justify-content: center;
     position: relative;
-    left: 10rem;
+    left: 14rem;
 }
 
-input[type="submit"]:hover {
+button:hover {
     background-color: #45a049;
 }
