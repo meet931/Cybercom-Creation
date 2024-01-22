@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+
+	<!-- below we are including the jQuery and jQuery plugin .js files -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+	<script>
+		$("#airLineForm").validate();
+	</script>
+</head>
+
+<body>
+	<form class="form" id="airLineForm" method="get" action="#">
+		<h1>Welcome to Mitesh's Airline Form</h1>
+
+		<p>
+			<label for="txtName">Name <span>(required at least 2 characters)</span></label>
+			<input id="txtName" name="txtName" minlength="2" type="text" required>
+		</p>
+
+		<p>
+			<label for="email">Email <span>(required, won't be published)</span></label>
+			<input id="email" type="email" name="email" required>
+		</p>
+
+		<p>
+			<label for="phoneNumber">Phone </label>
+			<input id="phoneNumber" type="tel" name="phoneNumber" required>
+		</p>
+
+		<p>
+			<label for="destination">Destination</label>
+			<select id="destination" name="destination" required>
+				<option value="">Select destination</option>
+				<option value="Ayodhya">Ayodhya</option>
+				<option value="Ahmedabad">Ahmedabad</option>
+				<option value="Los Angeles">Los Angeles</option>
+				<option value="New York">New York</option>
+				<option value="Oslo">Oslo</option>
+				<option value="London">London</option>
+				<option value="Tokyo">Tokyo</option>
+				<option value="Victoria">Victoria</option>
+			</select>
+		</p>
+
+		<p>
+			<label for="pwd">Password </label>
+			<input id="pwd" type="password" name="pwd" required>
+		</p>
+
+		<p>
+			<label for="cfmPassword">Confirm Password </label>
+			<input id="cfmPassword" type="password" name="cfmPassword" required>
+		</p>
+		<p>
+			<input class="submit" type="submit" value="submit">
+		</p>
+	</form>
+</body>
+
+</html>
