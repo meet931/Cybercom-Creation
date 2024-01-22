@@ -40,7 +40,7 @@ navLinks.forEach((n) => n.addEventListener("click", () => { navMenu.classList.re
 /*===== COPY Email =====*/
 const copy = document.getElementById("copy");
 copy.addEventListener("click", () => {
-  navigator.clipboard.writeText("miteshchaudhari@gmail.com");
+  navigator.clipboard.writeText("miteshchaudhari931@gmail.com");
   copy.innerHTML = "copied";
   setTimeout(() => {
     copy.innerHTML = null;
