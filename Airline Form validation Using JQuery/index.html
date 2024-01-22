@@ -5,35 +5,32 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="style.css">
 
-	<!-- below we are including the jQuery and jQuery plugin .js files -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
-
-	<script>
-		$("#airLineForm").validate();
-	</script>
+	<title>Mitesh's Airline Form</title>
 </head>
 
 <body>
 	<form class="form" id="airLineForm" method="get" action="#">
 		<h1>Welcome to Mitesh's Airline Form</h1>
 
+		<!-- Name -->
 		<p>
 			<label for="txtName">Name <span>(required at least 2 characters)</span></label>
 			<input id="txtName" name="txtName" minlength="2" type="text" required>
 		</p>
 
+		<!-- Email -->
 		<p>
 			<label for="email">Email <span>(required, won't be published)</span></label>
 			<input id="email" type="email" name="email" required>
 		</p>
 
+		<!-- Phone Number -->
 		<p>
 			<label for="phoneNumber">Phone </label>
 			<input id="phoneNumber" type="tel" name="phoneNumber" required>
 		</p>
 
+		<!-- Destination -->
 		<p>
 			<label for="destination">Destination</label>
 			<select id="destination" name="destination" required>
@@ -49,19 +46,30 @@
 			</select>
 		</p>
 
+		<!-- Password -->
 		<p>
-			<label for="pwd">Password </label>
-			<input id="pwd" type="password" name="pwd" required>
+			<label for="password">Password </label>
+			<input id="password" type="password" name="password" required>
 		</p>
 
+		<!-- Confirm Password -->
 		<p>
 			<label for="cfmPassword">Confirm Password </label>
-			<input id="cfmPassword" type="password" name="cfmPassword" required>
+			<input id="confirm_password" type="password" name="confirm_password" required>
 		</p>
 		<p>
 			<input class="submit" type="submit" value="submit">
 		</p>
 	</form>
+
+	
+	<!-- below we are including the jQuery and jQuery plugin .js files -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+	
+	<script src="validate.js"></script>
+
 </body>
 
 </html>
