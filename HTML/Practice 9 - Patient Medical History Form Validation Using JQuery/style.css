@@ -102,8 +102,8 @@ small {
 }
 
 input[type="text"] {
-    width: 48%; /* Adjust the width as needed */
-    margin-right: 2%; /* Add some spacing between the name inputs */
+    width: 48%; 
+    margin-right: 2%;|
 }
 
 #txtFrstName {
