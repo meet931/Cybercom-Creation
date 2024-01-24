@@ -18,14 +18,10 @@ form {
     border-radius: 5px;
 }
 
-#line1 {
+#line1, #line2 {
     width: 113%;
     position: relative;
     right: 2.6rem;
-    opacity: 40%;
-}
-
-#line2 {
     opacity: 40%;
 }
 
@@ -40,6 +36,7 @@ h1 {
 label {
     display: block;
     margin-bottom: 8px;
+    font-size: 14px;
 }
 
 input[type="text"],
@@ -103,7 +100,7 @@ small {
 
 input[type="text"] {
     width: 48%; 
-    margin-right: 2%;|
+    margin-right: 2%;
 }
 
 #txtFrstName {
@@ -113,6 +110,7 @@ input[type="text"] {
 #firstName {
     position: relative;
     top: -0.5rem;
+    left: 0.3rem;
     opacity: 60%;
     font-size: 75%;
 }
@@ -120,22 +118,9 @@ input[type="text"] {
 #lastName {
     position: relative;
     top: -0.5rem;
-    margin-left: 41%; /* Adjust the spacing for the last name */
+    margin-left: 40%;
     opacity: 60%;
     font-size: 75%;
-}
-
-#birthMonth {
-    position: relative;
-    left: 0.3em;
-    top: -0.4em;
-}
-
-#birthDay, #birthYear {
-    position: relative;
-    left: 13.3em;
-    top: -0.4em;
-    margin-right: 14em;
 }
 
 #email {
@@ -155,6 +140,19 @@ p select {
     border: 1px solid #ccc;
     border-radius: 4px;
     opacity: 80%;
+}
+
+#birthMonth {
+    position: relative;
+    left: 0.3em;
+    top: -0.4em;
+}
+
+#birthDay, #birthYear {
+    position: relative;
+    left: 13.3em;
+    top: -0.4em;
+    margin-right: 14em;
 }
 
 span {
