@@ -1,0 +1,26 @@
+<!-- Create a webpage with multiple images. Use JavaScript to change the source of the images based on user interaction. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Image Gallery</h1>
+
+<div id="imageContainer">
+    <img src="img/img1.jpg" alt="Image 1" id="image1" onclick="changeImage(this)">
+    <img src="img/img2.jpg" alt="Image 2" id="image2" onclick="changeImage(this)">
+    <img src="img/img3.jpg" alt="Image 3" id="image3" onclick="changeImage(this)">
+</div>
+
+<button onclick="document.querySelector('#image1').src='img/img4.jpg'">Click</button>
+<button onclick="document.querySelector('#image2').src='img/img3.jpg'">Click</button>
+<button onclick="document.querySelector('#image3').src='img/img1.jpg'">Click</button>
+
+</body>
+</html>
