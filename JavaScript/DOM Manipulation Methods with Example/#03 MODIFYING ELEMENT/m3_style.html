@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Style Example</title>
+        <script>
+            
+            document.addEventListener('DOMContentLoaded', function() {
+
+                // Applying Red color
+                document.getElementById('red').onclick = () => {
+                    document.getElementById('para').style.color = 'red';
+                }
+
+                // Applying Blue color
+                document.getElementById('blue').onclick = () => {
+                    document.getElementById('para').style.color = 'blue';
+                }
+            });
+
+        </script>
+    </head>
+    <body style="text-align: center;">
+        <h4>A program to define the usage of Style</h4>
+        <h2 id="para">Want to see me in Red or Blue color click below</h2>
+        
+        <button id="red">Red</button>
+        <button id="blue">Blue</button>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>querySelectorAll() Example</title>
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function() {
+
+                document.querySelectorAll('button').forEach(button => {
+
+                    button.onclick = () => {
+                        document.querySelector('h1').style.color = button.dataset.color;
+                    }
+
+                });
+
+            });
+            
+        </script>
+    </head>
+    <body style="text-align: center;">
+        <h1>querySelectorAll() Example</h1>
+        <button data-color="red">Red</button>
+        <button data-color="blue">Blue</button>
+        <button data-color="green">Green</button>
+    </body>
+</html>

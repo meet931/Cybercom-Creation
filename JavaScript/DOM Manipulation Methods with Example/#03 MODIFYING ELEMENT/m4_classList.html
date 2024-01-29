@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>element.classList Example</title>
+        <style>
+            .important {
+                color: red;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>element.classList Example</h1>
+        <p>This paragraph will change its style when you click the button below:</p>
+
+        <p id="myParagraph">This is a paragraph.</p>
+        <button id="toggleButton">Toggle Style</button>
+
+        <script>
+
+            // Select the paragraph element
+            const paragraph = document.getElementById('myParagraph');
+
+            // Select the button element
+            const toggleButton = document.getElementById('toggleButton');
+
+            toggleButton.addEventListener('click', function() {
+                // Toggle the 'important' class on the paragraph
+                paragraph.classList.toggle('important');
+
+                // Check if the class was added or removed, and update the button text accordingly
+                if (paragraph.classList.contains('important')) {
+                    toggleButton.textContent = 'Remove Style';
+                } else {
+                    toggleButton.textContent = 'Add Style';
+                }
+            });
+
+        </script>
+    </body>
+</html>

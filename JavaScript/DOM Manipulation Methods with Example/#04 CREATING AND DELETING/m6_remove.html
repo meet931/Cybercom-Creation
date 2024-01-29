@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>remove() Example</title>
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const removeButton = document.getElementById('removeButton');
+                const elementToRemove = document.getElementById('demo');
+
+                removeButton.addEventListener('click', function() {
+                    elementToRemove.remove();
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <h1>Remove Element Example</h1>
+        <p id="demo">This paragraph will be removed.</p>
+        <button id="removeButton">Remove Element</button>
+    </body>
+</html>

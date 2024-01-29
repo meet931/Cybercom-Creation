@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>removeChild() Example</title>
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function() {
+
+                const list = document.getElementById("myList");
+                list.removeChild(list.firstElementChild);
+
+            });
+
+        </script>
+    </head>
+    <body>
+        <h1>List of Items</h1>
+        <ul id="myList">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+    </body>
+</html>

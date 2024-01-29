@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>insertAdjacentHTML() Example</title>
+    </head>
+    <body>
+        <h1>insertAdjacentHTML() Example</h1>
+        <ul id="list">
+            <li>CSS</li>
+        </ul>
+
+    <script>
+
+        let list = document.querySelector('#list');
+
+        list.insertAdjacentHTML('beforebegin', '<h2>MiteshChaudhari</h2>');
+        list.insertAdjacentHTML('afterbegin', '<li>Address: Kalol</li>');
+        list.insertAdjacentHTML('beforeend', '<li>Blood Group: B+</li>');
+        list.insertAdjacentHTML('afterend', '<p>Thank you.....</p>');
+
+    </script>
+</body>
+</html>

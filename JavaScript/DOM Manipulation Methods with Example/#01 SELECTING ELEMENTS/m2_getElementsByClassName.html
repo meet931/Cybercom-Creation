@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>getElementsByClassName() Example</title>
+        <script>
+            
+            document.addEventListener('DOMContentLoaded', function() {
+
+                document.getElementById('change').onclick = () => {
+
+                    let element = document.getElementsByClassName('myClass');
+
+                    for(let i = 0; i < element.length; i++) {
+                        if(element[i].innerHTML === 'Change All') {
+                            element[i].innerHTML = 'We have changed';
+                        } else {
+                            element[i].innerHTML = 'Change All';
+                        }
+                    };
+                };
+            });
+
+        </script>
+    </head>
+    <body style="text-align: center;">
+        <h4>A program to define the usage of document.getElementsByClassName</h4>
+        <div class="myClass">Change All</div>
+        <div class="myClass">Change All</div>
+        <div class="myClass">Change All</div>
+        <div class="myClass">Change All</div>
+
+        <br>
+
+        <button id="change">Change</button>
+    </body>
+</html>

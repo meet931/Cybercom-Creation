@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>getAttribute() Example</title>
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function() {
+
+                let link = document.querySelector('#js');
+                let outputElement = document.getElementById('output');
+                
+                if (link && outputElement) {
+                    let target = link.getAttribute('target');
+                    outputElement.textContent = `Target attribute value: ${target}`;
+                }
+            });
+
+        </script>
+    </head>
+    <body style="text-align: center;">
+
+        <h1>getAttribute() Example</h1>
+
+        <a href="https://github.com/meet931" target="_blank" id="js">Mitesh Chaudhari's GitHub</a>
+
+        <!-- Created a span element to display the target attribute value -->
+        <p id="output"></p>
+
+    </body>
+</html>

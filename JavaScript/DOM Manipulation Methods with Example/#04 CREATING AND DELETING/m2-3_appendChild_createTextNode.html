@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            h1,h2 {
+                font-weight: bold;
+                color: green;
+            }
+            
+            body {
+                margin-left: 130px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Cybercom Creation</h1>
+        <h2>DOM appendChild() and createTextNode() Method</h2>
+        <ul id="batch">
+            <li>Full Stack Developer Batch</li>
+            <li>php Batch</li>
+        </ul>
+        
+        <button onclick="change()"></button>
+
+        <script>
+            function change() {
+
+                // Created a list
+                let li = document.createElement("li");
+
+                // Created a node for storing text
+                let textnode = document.createTextNode("QA Batch");
+
+                // appended a textnode to list
+                li.appendChild(textnode);
+                document.getElementById("batch").appendChild(li);
+            }
+        </script>
+    </body>
+</html>

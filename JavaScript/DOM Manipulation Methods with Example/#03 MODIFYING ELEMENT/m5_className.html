@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>className Example</title>
+        <style>
+            .class {
+                color: red;
+            }
+        </style>
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function() {
+                var spans = document.getElementsByTagName("span");
+
+                for (var i = 0; i < spans.length; i++) {
+                    // Check if the current span has the class 'class'
+                    if (spans[i].classList.contains('class')) {
+                        // If it does, change its background color to black
+                        spans[i].style.backgroundColor = '#000';
+                    }
+                }
+            });
+
+        </script>
+    </head>
+    <body>
+        <h1>className Example</h1>
+        <span class="class">Span 1</span>
+        <span>Span 2</span>
+        <span class="class">Span 3</span>
+        <span>Span 4</span>
+    </body>
+</html>

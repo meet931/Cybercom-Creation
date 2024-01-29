@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>replaceChild() Example</title>
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function() {
+                // Get the parent element
+                const parentList = document.getElementById("myList");
+
+                // Create a new list item
+                const newItem = document.createElement("li");
+                newItem.textContent = "Replaced Item";
+
+                // Get the old item to be replaced
+                const oldItem = document.getElementById("oldItem");
+
+                // Replace the old item with the new item
+                parentList.replaceChild(newItem, oldItem);
+            });
+
+        </script>
+    </head>
+    <body>
+        <h1>List of Items</h1>
+        <ul id="myList">
+            <li id="oldItem">Computer/li>
+            <li>Laptop</li>
+            <li>Mobile Phone</li>
+        </ul>
+    </body>
+</html>

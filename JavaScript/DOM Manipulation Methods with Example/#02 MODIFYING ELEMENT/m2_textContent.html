@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>textContent Example</title>
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function() {
+
+                document.querySelector('button').onclick = () => {
+                    
+                    const element = document.getElementById('myDiv');
+                    
+                    if(element.textContent === 'Initial Content') {
+                        element.textContent = 'Hello All!';
+                    } else {
+                        element.textContent = 'Initial Content';
+                    }
+                    alert(`After: ${element.textContent}`);
+                };
+            });
+
+        </script>
+    </head>
+    <body style="text-align: center;">
+        <h1>textContent Example</h1>
+        <br>
+        <h3 id="myDiv">Initial Content</h3>
+        <button>Change</button>
+</body>
+</html>

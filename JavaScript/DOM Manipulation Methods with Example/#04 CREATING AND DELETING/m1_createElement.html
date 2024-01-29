@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TO DO LIST APPLICATION</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                
+                // By default, submit botton is disabled
+                document.querySelector('#submit').disabled = true;
+                
+                document.querySelector('#task').onkeyup = () => {
+                    if(document.querySelector('#task').value.length > 0) {
+                        document.querySelector('#submit').disabled = false;
+                    } else {
+                        document.querySelector('#submit').disabled = true;
+                    }
+                }
+
+                document.querySelector('form').onsubmit = () => {
+                    const task = document.querySelector('#task').value;
+
+                    // Created li inside ul
+                    const li = document.createElement('li');
+                    li.innerHTML = task;
+
+                    document.querySelector('#tasks').append(li);
+
+                    document.querySelector('#task').value = '';
+                    document.querySelector('#submit').disabled = true;
+
+                    // Stop submitting the form
+                    return false;
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Tasks</h1>
+        <ul id="tasks">
+        </ul>
+        <form>
+            <input type="text" id="task" placeholder="New task">
+            <input type="submit" id="submit">
+        </form>
+    </body>
+</html>

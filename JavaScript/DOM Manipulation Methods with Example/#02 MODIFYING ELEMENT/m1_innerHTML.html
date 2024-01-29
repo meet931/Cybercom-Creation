@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>innerHTML Example</title>
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function() {
+
+                document.querySelector('button').onclick = () => {
+
+                    const element = document.getElementById('myDiv');
+                    
+                    if(element.innerHTML === 'Initial Content') {
+                        element.innerHTML = 'New Content';
+                    } else {
+                        element.innerHTML = 'Initial Content';
+                    }
+                };
+            });
+
+        </script>
+    </head>
+    <body style="text-align: center;">
+        <h1>innerHTML Example</h1>
+        <br>
+        <h3 id="myDiv">Initial Content</h3>
+        <button>Click Me</button>
+    </body>
+</html>
