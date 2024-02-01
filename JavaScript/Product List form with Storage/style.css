@@ -80,3 +80,19 @@ input::-webkit-inner-spin-button {
     font-size: 14px;
     margin-top: 5px;
 }
+
+
+/* Product List CSS */
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    width: 50%;
+}
+
+.listContainer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 5rem;
+}

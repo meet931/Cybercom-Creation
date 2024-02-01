@@ -1,62 +1,27 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <title>Product Listing Form</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-    <div class="container">
-        <form action="#" method="get" class="productForm" id="productForm">
-            <div class="formContainer">
-                <h1>Add Product Form</h1>
-                <div class="fields">
-                    <div class="txtabtProduct">
-
-                        <!-- Product Title -->
-                        <div class="inputField">
-                            <label for="txtproductTitle">Product Title</label>
-                            <input type="text" id="txtproductTitle" name="txtproductTitle" required>
-                            <div class="error"></div>
-                        </div>
-
-                        <!-- Price -->
-                        <div class="inputField">
-                            <label for="numProductPrice">Price</label>
-                            <input type="number" id="numProductPrice" name="numProductPrice" required>
-                            <div class="error"></div>
-                        </div>
+<html lang="en">
+    <head>
+        <title>Product List</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="productList.js"></script>
+    </head>
+    <body>
+        <div class="listContainer">
+            <a href="index.html"><button>Add New +</button></a>
+            <table>
+                <thead>
+                    <div class="thead">
+                        <tr>
+                            <th>Product Title</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
                     </div>
+                </thead>
 
-                    <!-- Description -->
-                    <div class="inputField">
-                        <label for="txtareaDescription">Description</label>
-                        <textarea id="txtareaDescription" name="txtareaDescription" rows="4" cols="10"
-                            placeholder="Type here"></textarea>
-                        <div class="error"></div>
-                    </div>
-                    
-                    <!-- Category -->
-                    <div class="inputField">
-                        <label for="category">Category</label>
-                        <select id="category" name="category" required>
-                            <option value="select">Choose...</option>
-                            <option value="electronics">Electronics</option>
-                            <option value="women's-clothing">Women's Clothing</option>
-                            <option value="men's-clothing">Men's Clothing</option>
-                        </select>
-                        <div class="error"></div>
-                    </div>
-                    <input type="submit" value="Save" id="submit">
-                </div>
-            </div>
-        </form>
-    </div>
-</body>
-
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+    </body>
 </html>
