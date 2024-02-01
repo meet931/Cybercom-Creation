@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <link rel="stylesheet" href="/css/users.css">
+</head>
+<body>
+    <div class="container">
+
+        <h2>Add User</h2>
+        
+
+        <form id="addUserForm">
+
+            <!-- Name -->
+            <div class="form-group">
+                <input type="text" id="txtUserName" name="txtUserName" placeholder="Name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <input type="email" id="userEmail" name="userEmail" placeholder="Email" required>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <input type="password" id="userPassword" name="userPassword" placeholder="Password" required>
+            </div>
+
+            <!-- Birthdate -->
+            <div class="form-group">
+                <input type="date" id="userBdate" name="userBdate" placeholder="Birthdate" required>
+            </div>
+
+
+            <button type="submit">Add User</button>
+        </form>
+        <h2>User List</h2>
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Birthdate</th>
+                    <th>Age</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="userList">
+                <!--  Dynamic User list here -->
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/users.js"></script>
+</body>
+</html>
+

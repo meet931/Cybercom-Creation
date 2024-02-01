@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- below we are including the jQuery and jQuery plugin .js files -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+    <script src="/js/registerValidation.js"></script>
+</head>
+<body>
+    <div class="regContainer">
+        <form action="/html/login.html" method="post" id="registrationForm">
+            
+            <h1>Register</h1>
+
+            <!-- NAME -->
+            <div class="inputField">
+                <input type="text" placeholder="Name" id="txtName" required>
+            </div>
+
+            <!-- EMAIL -->
+            <div class="inputField">
+                <input type="email" placeholder="Email" id="email" required>
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="inputField">
+                <input type="password" placeholder="Password" id="regPassword" required>
+            </div>
+
+            <!-- CONFIRM PASSWORD -->
+            <div class="inputField">
+                <input type="password" placeholder="Confirm Password" id="cnfPassword" required>
+            </div>
+
+            <!-- SELECT CITY -->
+            <div class="inputField">
+                <Select>
+                    <option value="selCity">Select City</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Kalol">Kalol</option>
+                    <option value="Gandhinagar">Gandhinagar</option>
+                    <option value="Vadodara">Vadodara</option>
+                </Select>
+            </div>
+
+            <!-- SELECT STATE -->
+            <div class="inputField">
+                <Select>
+                    <option value="selState">Select State</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Maharastra">Maharastra</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                </Select>
+            </div>
+
+            <!-- SELECT STATE -->
+            <div class="inputField">
+                <input type="checkbox" id="termAndCond" required>Terms & Conditions
+            </div>
+
+            <br>
+
+            <button id="regBtn" type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>

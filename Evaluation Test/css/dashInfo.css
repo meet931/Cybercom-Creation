@@ -1,0 +1,47 @@
+.container {
+    max-width: 800px;
+    margin: 200px auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cotainerClass {
+    padding: 5px;
+    display: flex;
+    margin-right: 5px;
+    justify-content: space-evenly;
+    border: 1px solid black;
+}
+
+.cotainerClass h4 {
+    position: relative;
+    left: 15px;
+}
+
+#c1 {
+    background-color: rgb(240, 171, 128);
+}
+
+#c2 {
+    background-color: rgb(240, 171, 128);
+}
+
+#c3 {
+    background-color: rgb(240, 171, 128);
+}
+
+.cotainerClass p {
+    position: relative;
+    left: -62px;
+    top: 20px;
+}
+
+h4 {
+    text-align: center;
+}
+
+h3 {
+    position: relative;
+    left: 1.5rem;
+}
