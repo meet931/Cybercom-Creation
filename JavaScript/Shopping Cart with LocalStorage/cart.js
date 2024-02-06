@@ -15,7 +15,7 @@ function renderProdcuts() {
                     </div>
                     <div class="desc">
                         <h2>${product.name}</h2>
-                        <h2><small>Rs. </small>${product.price}</h2>
+                        <h2><small>&#8377; </small>${product.price}</h2>
                     </div>
                     <div class="add-to-cart" onclick="addToCart(${product.id})">
                         <img src="./icons/bag-plus.png" alt="add to cart">
@@ -67,7 +67,7 @@ function renderSubtotal() {
     totalItems += item.numberOfUnits;
   });
 
-  subtotalEl.innerHTML = `Subtotal (${totalItems} items): Rs. ${totalPrice.toFixed(2)}`;
+  subtotalEl.innerHTML = `Subtotal (${totalItems} items): &#8377; ${totalPrice.toFixed(2)}`;
   totalItemsInCartEl.innerHTML = totalItems;
 }
 
@@ -82,7 +82,7 @@ function renderCartItems() {
                 <h4>${item.name}</h4>
             </div>
             <div class="unit-price">
-                <small>Rs. </small>${item.price}
+                <small>&#8377; </small>${item.price}
             </div>
             <div class="units">
                 <div class="btn minus" onclick="changeNumberOfUnits('minus', ${item.id})">-</div>

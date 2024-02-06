@@ -31,11 +31,11 @@ h1 {
 }
 
 .products-list {
-  width: 100vw;
+  width: 200vw;
   height: 100vh;
   padding-top: 44px;
   display: flex;
-  margin-left: 34rem;
+  margin-left: 23rem;
 }
 
 .products {
@@ -147,10 +147,20 @@ h1 {
   padding: 10px 0;
 }
 
+.cart-item .desc {
+  position: relative;
+  left: 2rem;
+  text-align: center;
+}
+
 .cart-item div {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.item-container div .desc h5 {
+  text-align: center;
 }
 
 .cart-item .item-info {
@@ -224,4 +234,31 @@ h1 {
 .cart-footer .checkout {
   background-color: rgb(242, 255, 58);
   cursor: pointer;
+}
+
+.item {
+  display: flex;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.item-container {
+  display: flex;
+}
+
+.item-img {
+  width: 50%;
+}
+
+.item-img img {
+  width: 100px; 
+  height: 100px; 
+  object-fit: contain;
+  margin-right: 20px;
+}
+
+.desc {
+  flex-grow: 1;
+  
 }

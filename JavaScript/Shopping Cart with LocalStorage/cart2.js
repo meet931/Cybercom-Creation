@@ -6,7 +6,7 @@ renderProdcuts();
 
 // RENDER PRODUCTS
 function renderProdcuts() {
-  // cartItem.innerHTML ='';
+  cartItem.innerHTML ='';
   cart.forEach((product) => {
  
     const div = document.createElement('div');
@@ -15,13 +15,16 @@ function renderProdcuts() {
                 <div class="item-container">
                     <div class="item-img">
                         <img src="${product.imgSrc}" alt="${product.name}">
+                        <h4>${product.name}</h4>
                     </div>
                     <div class="desc">
-                        <h2>${product.name}</h2>
-                        <h2><small>Rs. </small>${product.price}</h2>
+                        <h5>&#8377;${product.price}</h5>
                     </div>
-                    <div class="add-to-cart" onclick="addToCart(${product.id})">
-                        <img src="./icons/bag-plus.png" alt="add to cart">
+                    <div class="noOfUnits">
+                        <h5>${product.numberOfUnits}</h5>
+                    </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <div class="totalPrice">
+                      <h5>&#8377;${product.price * product.numberOfUnits}</h5>
                     </div>
                 </div>  
         `;
@@ -30,10 +33,14 @@ function renderProdcuts() {
 }
 
 function calculatePrice() {
-  let totalPrice = cart.reduce((current, previous) => {
-    return previous.price + current
-  }, 0);
-  grandTotal.innerHTML = `Grandtotal (${cart.length} items): Rs. ${totalPrice}`
+  let totalPrice = 0,
+    totalItems = 0;
+
+  cart.forEach((item) => {
+    totalPrice += item.price * item.numberOfUnits;
+    totalItems += item.numberOfUnits;
+  });
+  grandTotal.innerHTML = `Grandtotal (${totalItems} items):&nbsp; &#8377; <h4>${totalPrice}</h4>`
 
 }
 
