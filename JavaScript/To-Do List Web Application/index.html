@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>To Do List Application</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+
+        <form id="taskForm">
+            <input type="text" id="txtTask" placeholder="Add new Task" required>
+            <input type="text" id="txtDescription" placeholder="Task Description(optional)">
+            <select id="taskPriority">
+                <option value="select">-- Select --</option>
+                <option value="impUrg">Important & Urgent</option>
+                <option value="impNtUr">Important but Not Urgent</option>
+                <option value="notImpUr">Not Important but Urgent</option>
+                <option value="NtImpNtUr">Not Important & Not Urgent</option>
+            </select>
+            <input type="date" id="taskDueDate" required>
+            <button id="addBtn">Add</button>
+        </form>
+
+        <ul id="tasks">
+            <!-- list -->
+        </ul>
+    </div>
+
+</body>
+
+</html>
