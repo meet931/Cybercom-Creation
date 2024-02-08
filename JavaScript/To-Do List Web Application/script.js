@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('addBtn').disabled = true;
     }
 
-    
+
     // EDIT, DELETE AND MARK AS COMPLETED
     taskList.addEventListener('click', function (event) {
         const target = event.target;
@@ -141,6 +141,9 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('taskPriority').value = taskDetails.Priority;
             document.getElementById('taskDueDate').value = taskDetails.Due;
 
+            // Update button text to "Update Task"
+            addButton.textContent = 'Update Task';
+
             // Handle form submission for editing
             form.onsubmit = (event) => {
                 event.preventDefault();
@@ -164,8 +167,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 displayTasks();
 
                 // Reset the form submission handler after editing
-                form.onsubmit = form;
+                // form.onsubmit = form;
             };
+
+            // Update button text to again "Add"
+            addButton.textContent = 'Add';
 
         } else if (target.type == 'checkbox') {
             console.log("Checkbox clicked. Marking task as completed...");
