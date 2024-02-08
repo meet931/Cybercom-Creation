@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 640px;
     margin: 30px auto;
     padding: 20px;
     background-color: #fff;
@@ -17,6 +17,27 @@ body {
 h1 {
     text-align: center;
 }
+
+.filterAndSort {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 43.2rem;
+}
+
+.filter,
+.sort {
+    margin-right: 10px;
+}
+
+.select {
+    margin-right: 10px;
+}
+
+.empty {
+    margin-top: 20px;
+    text-align: center;
+}
+
 
 form input,
 form select,
@@ -55,4 +76,20 @@ li:last-child {
 
 .task-complete {
     text-decoration: line-through;
+}
+
+.task-text {
+    font-size: large;
+    font-weight: 600;
+}
+
+.task-date {
+    margin-left: 1rem;
+
+}
+
+.task-priority button.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-weight: bold;
+    font-size: 0.8rem; 
 }

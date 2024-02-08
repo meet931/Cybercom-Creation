@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const addButton = document.getElementById('addBtn');
     const taskList = document.getElementById('tasks');
 
+
     // BY DEFAULT, ADD BUTTON IS DISABLED
     addButton.disabled = true;
 
@@ -80,6 +81,70 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     
 
+    // TASK FILTER
+    const filterSelect = document.querySelector('#filter');
+
+    filterSelect.addEventListener('change', function(event) {
+        const filterValue = event.target.value;
+
+        // Get all the tasks
+        const tasks = document.querySelectorAll('#tasks li');
+
+        // Loop through all tasks to show/hide based on the filter value
+        tasks.forEach(task => {
+            if (filterValue === '2') { // Completed
+                const checkbox = task.querySelector('#checkbox');
+                if (checkbox.checked) {
+                    task.style.display = 'block';
+                } else {
+                    task.style.display = 'none';
+                }
+            } else if (filterValue === '3') { // Active
+                const checkbox = task.querySelector('#checkbox');
+                if (!checkbox.checked) {
+                    task.style.display = 'block';
+                } else {
+                    task.style.display = 'none';
+                }
+            } else {
+                task.style.display = 'block';
+            }
+        });
+    });
+
+    
+    // TASK SORTING
+    const sortSelect = document.querySelector('#sort');
+
+    sortSelect.addEventListener('change', function(event) {
+        const sortValue = event.target.value;
+        const tasks = document.querySelectorAll('#tasks li');
+
+        // List -> Array conversion for sorting
+        const tasksArray = Array.from(tasks);
+
+        tasksArray.sort(function(taskA, taskB) {
+            const dueDateA = new Date(taskA.querySelector('.task-date small').textContent);
+            const dueDateB = new Date(taskB.querySelector('.task-date small').textContent);
+
+            if (sortValue === 'ascending') {
+                return dueDateA - dueDateB;
+            } else if (sortValue === 'descending') {
+                return dueDateB - dueDateA;
+            } else {
+                return 0; // No sorting
+            }
+        });
+
+        const taskList = document.getElementById('tasks');
+        taskList.innerHTML = ''; // Clear current list
+
+        tasksArray.forEach(task => {
+            taskList.appendChild(task);
+        });
+    });
+
+
     // FUNCTION TO DISPLAY TASKS
     function displayTasks() {
         console.log("Displaying tasks...");
@@ -91,13 +156,13 @@ document.addEventListener('DOMContentLoaded', function () {
             const li = document.createElement('li');
             li.innerHTML = `
                 <span class="task-text">${taskDetails.TaskName}</span>
+                <span class="task-date"><small>${taskDetails.Due}</small></span><br>
                 <span class="task-desc">${taskDetails.Description}</span>
-                <span class="task-priority">${taskDetails.Priority}</span>
-                <span class="task-date">${taskDetails.Due}</span>
+                <span class="task-priority"><button class="btn-sm ${getPriorityClass(taskDetails.Priority)}">${taskDetails.Priority}</button></span>
                 <div class="float-right">
                     <button class="btn btn-sm btn-outline-primary edit-btn" data-id="${index}">Edit</button>
                     <button class="btn btn-sm btn-outline-danger delete-btn" data-id="${index}">Delete</button>
-                    <input type="checkbox" class="form-check-input ml-2" data-id="${index}">
+                    <input type="checkbox" class="form-check-input ml-2" id="checkbox" data-id="${index}">
                 </div>
             `;
             taskList.appendChild(li);
@@ -107,6 +172,20 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('addBtn').disabled = true;
     }
 
+    function getPriorityClass(priority) {
+        switch (priority) {
+            case 'Important & Urgent':
+                return 'btn btn-danger';
+            case 'Important but Not Urgent':
+                return 'btn btn-light';
+            case 'Not Important but Urgent':
+                return 'btn btn-warning';
+            case 'Not Important & Not Urgent':
+                return 'btn btn-light-orange';
+            default:
+                return 'btn btn-secondary';
+        }
+    }
 
     // EDIT, DELETE AND MARK AS COMPLETED
     taskList.addEventListener('click', function (event) {
@@ -166,8 +245,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Display Tasks
                 displayTasks();
 
-                // Reset the form submission handler after editing
-                // form.onsubmit = form;
             };
 
             // Update button text to again "Add"
