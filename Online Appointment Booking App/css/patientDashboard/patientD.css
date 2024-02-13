@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 640px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+form input,
+form select,
+form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 16px;
+}
+
+form button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+#bookedAppointmentList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#bookedAppointmentList li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#bookedAppointmentList li:last-child {
+    border-bottom: none;
+}
+
+#appointmentForm {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#doctor-list {
+    margin-top: 20px;
+}
+
+#doctor-select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+}
+
+#addBtn {
+    width: 100%;
+}
+
+.patient-details {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.patient-details span {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.patient-name {
+    font-weight: bold;
+}
+
+.patient-phone,
+.patient-blood-group,
+.patient-division,
+.patient-doctor,
+.patient-appointment-date {
+    color: #666;
+}

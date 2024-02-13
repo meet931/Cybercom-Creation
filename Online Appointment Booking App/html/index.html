@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booking App</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Appointment Booking App</h1>
+    </header>
+    <div class="container">
+
+        <main id="main-content">
+
+            <!-- LOGIN -->
+            <div id="loginForm">
+                <h2>Login</h2>
+                <input type="text" id="username" placeholder="Username">
+                <input type="email" id="loginEmail" placeholder="Email">
+                <input type="password" id="loginPassword" placeholder="Password">
+                <select id="role">
+                    <option value="patient">Patient</option>
+                    <option value="doctor">Doctor</option>
+                </select>
+                <button id="loginBtn">Login</button>
+                <span id="loginError" class="error-message"></span>
+                <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+            </div>
+
+            <!-- REGISTRATION -->
+            <div id="registerForm" style="display: none;">
+                <h2>Register</h2>
+                <input type="text" id="newUsername" placeholder="Username">
+                <input type="text" id="fullName" placeholder="Full Name">
+                <input type="text" id="registerEmail" placeholder="Email">
+                <input type="text" id="phone" placeholder="Phone Number">
+                <select id="newRole">
+                    <option value="patient">Patient</option>
+                    <option value="doctor">Doctor</option>
+                </select>
+                <input type="password" id="newPassword" placeholder="Password">
+                <button id="registerBtn">Register</button>
+                <span id="registerError" class="error-message"></span>
+                <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+            </div>
+        </main>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

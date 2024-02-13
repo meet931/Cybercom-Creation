@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Patient Appointment Booking</title>
+    <link rel="stylesheet" href="/css/patientDashboard/patientD.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+</head>
+
+<body>
+    <div class="container">
+        <h1>Patient Appointment Booking</h1>
+
+        <form id="appointmentForm">
+            <input type="text" id="txtName" placeholder="Full Name" required>
+            <input type="number" id="numPhone" placeholder="Phone number" required>
+            <input type="text" id="txtBloodGroup" placeholder="Blood Group" required>
+
+            <h2>Select Division:</h2>
+            <select id="division-select" class="custom-select">
+                <option value="cardiology" id="pr1">Cardiology</option>
+                <option value="neurology" id="pr2">Neurology</option>
+                <option value="orthopedics" id="pr3">Orthopedics</option>   
+            </select>
+
+            <div id="doctor-list">
+                <h2>Select Doctor:</h2>
+                <select id="doctor-select">
+                    <!-- Doctor options -->
+                </select>
+            </div>
+            <input type="datetime-local" id="appointmentData" required>
+            <button id="addBtn">Book</button>
+        </form>
+
+        <ul id="bookedAppointmentList">
+            <!-- list -->
+        </ul>
+    </div>
+    <script src="/js/patientDashboard/patientD.js"></script>
+</body>
+
+</html>
