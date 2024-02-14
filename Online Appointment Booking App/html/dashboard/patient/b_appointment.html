@@ -4,14 +4,12 @@
 <head>
     <title>Patient Appointment Booking</title>
     <link rel="stylesheet" href="/css/patientDashboard/patientD.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     
 </head>
 
 <body>
     <div class="container">
-        <h1>Patient Appointment Booking</h1>
+        <h1>Book Your Appointment</h1>
 
         <form id="appointmentForm">
             <input type="text" id="txtName" placeholder="Full Name" required>
@@ -31,13 +29,34 @@
                     <!-- Doctor options -->
                 </select>
             </div>
+            <div id="timeslot-list">
+                <h2>Select Slot:</h2>
+                <select id="time-select">
+                    <!-- timeslot options -->
+                </select>
+            </div>
             <input type="datetime-local" id="appointmentData" required>
             <button id="addBtn">Book</button>
         </form>
 
-        <ul id="bookedAppointmentList">
-            <!-- list -->
-        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Patient name</th>
+                    <th>Phone</th>
+                    <th>Blood Group</th>
+                    <th>Division</th>
+                    <th>Dr. Name</th>
+                    <th>Date & Time</th>
+                    <th>status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody  id="bookedAppointmentList">
+                <!-- list -->
+            </tbody>
+        </table>
     </div>
     <script src="/js/patientDashboard/patientD.js"></script>
 </body>

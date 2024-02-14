@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/drDashboard/appointment.css">
+</head>
+<body>
+    <div id="container">
+        <div id="patientAppointmentList">
+            <h1>Appointment Request from Patients</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Patient name</th>
+                        <th>Date</th>
+                        <th>Phone Number</th>
+                        <th>Time</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody  id="listOfPatientsForAppointment">
+                    <!-- dynamic -->
+                </tbody>
+            </table>
+        </div>
+        <div id="patientApprovedAppointmentList">
+            <h1>Approved Appointment of Patients</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Patient name</th>
+                        <th>Date</th>
+                        <th>Phone Number</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody  id="approvedlistOfPatientsForAppointment">
+                    <!-- dynamic -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/js/drDashboard/appointment.js"></script>
+</body>
+</html>

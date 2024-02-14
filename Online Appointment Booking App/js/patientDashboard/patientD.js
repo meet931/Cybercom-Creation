@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (nameValue && addedPhone && addedDivision && addedBloodGroup && addedDrList && addedDateValue) {
             console.log("Form submitted. Adding patient to local storage...");
 
-            // Create an object
             const patientDetails = {
                 'Name': nameValue,
                 'PhoneNumber': addedPhone,
@@ -60,11 +59,8 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 localStorage.setItem(localStorage_KEYS.PATIENTS, JSON.stringify([patientDetails]));
             }
-
-            // Clear form fields
             form.reset();
 
-            // Display patients
             displayAppointments();
         } else {
             alert('All fields are required!');
@@ -82,24 +78,26 @@ document.addEventListener('DOMContentLoaded', function () {
         patientList.innerHTML = '';
 
         allPatients.forEach(function (patientDetails, index) {
-            const li = document.createElement('li');
-            li.innerHTML = `
-                <span class="patient-name">${patientDetails.Name}</span>
-                <span class="patient-phone">${patientDetails.PhoneNumber}</span>
-                <span class="patient-blood-group">${patientDetails.BloodGroup}</span>
-                <span class="patient-division">${patientDetails.Division}</span>
-                <span class="patient-doctor">${patientDetails.Doctor}</span>
-                <span class="patient-appointment-date">${patientDetails.AppointmentDate}</span>
-                <button class="cancel-appointment-btn" data-index="${index}">Cancel</button>
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${index+1}</td>
+                <td class="patient-name">${patientDetails.Name}</td>
+                <td class="patient-phone">${patientDetails.PhoneNumber}</td>
+                <td class="patient-blood-group">${patientDetails.BloodGroup}</td>
+                <td class="patient-division">${patientDetails.Division}</td>
+                <td class="patient-doctor">${patientDetails.Doctor}</td>
+                <td class="patient-appointment-date">${patientDetails.AppointmentDate}</td>
+                <td>pending</td>
+                <td>
+                    <button class="cancel-appointment-btn" data-index="${index}">Cancel</button>
+                </td>
             `;
-            patientList.appendChild(li);
+            patientList.appendChild(row);
         });
 
-        // Clear name input and disable button
         name.value = '';
         bookAppointmentBtn.disabled = true;
 
-        // Add event listener for canceling appointments
         const cancelButtons = document.querySelectorAll('.cancel-appointment-btn');
         cancelButtons.forEach(cancelButton => {
             cancelButton.addEventListener('click', function () {
@@ -112,23 +110,15 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to cancel appointment
     function cancelAppointment(index) {
         let allPatients = JSON.parse(localStorage.getItem(localStorage_KEYS.PATIENTS));
-
-        // Confirm cancellation
         const confirmCancel = confirm('Are you sure you want to cancel this appointment?');
 
         if (confirmCancel) {
-            // Remove the canceled appointment from the array
             allPatients.splice(index, 1);
-
-            // Update local storage
             localStorage.setItem(localStorage_KEYS.PATIENTS, JSON.stringify(allPatients));
 
-            // Display updated list
             displayAppointments();
         }
     }
-
-    // Initial display of appointments
     displayAppointments();
 });
 
@@ -139,19 +129,19 @@ document.addEventListener("DOMContentLoaded", function () {
         "neurology": ["Dr. Mehta", "Dr. Sheetal", "Dr. Mahajan", "Dr. Zeel"],
         "orthopedics": ["Dr. Saloni", "Dr. Asha", "Dr. Dipak", "Dr. Neeraj"]
     };
-
+    
     const divisionSelect = document.getElementById("division-select");
     const doctorSelect = document.getElementById("doctor-select");
+
+    const timeSlotSelect = document.getElementById('time-select');
 
     // Populate doctor select options based on selected division
     divisionSelect.addEventListener("change", function () {
         const selectedDivision = this.value;
         const doctors = divisions[selectedDivision];
-
-        // Clear previous options
         doctorSelect.innerHTML = "";
 
-        // Add new options
+        // Adding new options
         doctors.forEach(doctor => {
             const option = document.createElement("option");
             option.textContent = doctor;
@@ -163,18 +153,4 @@ document.addEventListener("DOMContentLoaded", function () {
     const firstDivision = Object.keys(divisions)[0];
     divisionSelect.value = firstDivision;
     divisionSelect.dispatchEvent(new Event("change"));
-
-    // Event listener for booking appointments
-    doctorSelect.addEventListener("change", function () {
-        const selectedDoctor = doctorSelect.value;
-        const confirmBooking = confirm(`Book an appointment with ${selectedDoctor}?`);
-        if (confirmBooking) {
-            bookAppointment();
-        }
-    });
-
-    // Function to book an appointment
-    function bookAppointment() {
-        alert("Appointment booked successfully!");
-    }
 });

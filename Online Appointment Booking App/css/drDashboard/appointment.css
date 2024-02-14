@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+table {
+    width: 90%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.accept {
+    background-color: lightgreen;
+    border-color: lightgreen;
+}
+
+.decline {
+    background-color: lightcoral;
+    border-color: lightcoral;
+}
+
+#patientApprovedAppointmentList {
+    margin-top: 12rem;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Availability</title>
+    <link rel="stylesheet" href="/css/drDashboard/setAvailabiltiy.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Your Availability</h2>
+        <form id="availabilityForm">
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+            <label for="fromTime">From:</label>
+            <input type="time" id="fromTime" required>
+            <label for="toTime">To:</label>
+            <input type="time" id="toTime" required>
+            <label for="slots">Number of Slots:</label>
+            <input type="number" id="slots" min="1" required>
+            <button type="submit">Set Availability</button>
+        </form>
+        <div id="availabilityTable">
+            <h3>Your Availability</h3>
+            <table id="availabilityData">
+                <tr>
+                    <th>Date</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Slots Available</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="/js/drDashboard/setAvailabilty.js"></script>
+</body>
+
+</html>

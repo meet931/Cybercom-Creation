@@ -1,32 +1,32 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     let users = JSON.parse(localStorage.getItem('users')) || [];
 
     // SHOWING REGISTRATION FORM
-    document.getElementById('showRegister').addEventListener('click', function(event) {
+    document.getElementById('showRegister').addEventListener('click', function (event) {
         event.preventDefault();
         document.getElementById('loginForm').style.display = 'none';
         document.getElementById('registerForm').style.display = 'block';
     });
 
     // SHOWING LOGIN FORM
-    document.getElementById('showLogin').addEventListener('click', function(event) {
+    document.getElementById('showLogin').addEventListener('click', function (event) {
         event.preventDefault();
         document.getElementById('registerForm').style.display = 'none';
         document.getElementById('loginForm').style.display = 'block';
     });
 
     // REGISTRATION
-    document.getElementById('registerBtn').addEventListener('click', function(event) {
+    document.getElementById('registerBtn').addEventListener('click', function (event) {
         event.preventDefault();
         resetErrors();
 
         // VALUES
-        let username = document.getElementById('newUsername').value;
-        let fullName = document.getElementById('fullName').value;
-        let email = document.getElementById('registerEmail').value; 
-        let phone = document.getElementById('phone').value;
-        let role = document.getElementById('newRole').value;
-        let password = document.getElementById('newPassword').value;
+        let username = document.getElementById('newUsername').value.trim();
+        let fullName = document.getElementById('fullName').value.trim();
+        let email = document.getElementById('registerEmail').value.trim();
+        let phone = document.getElementById('phone').value.trim();
+        let role = document.getElementById('newRole').value.trim();
+        let password = document.getElementById('newPassword').value.trim();
 
         // Validate fields
         if (!username || !password || !role || !fullName || !email || !phone) {
@@ -59,14 +59,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // LOGIN
-    document.getElementById('loginBtn').addEventListener('click', function(event) {
+    document.getElementById('loginBtn').addEventListener('click', function (event) {
         event.preventDefault();
         resetErrors();
 
-        let username = document.getElementById('username').value;
-        let userEmail = document.getElementById('loginEmail').value;
-        let password = document.getElementById('loginPassword').value;
-        let role = document.getElementById('role').value;
+        let username = document.getElementById('username').value.trim();
+        let userEmail = document.getElementById('loginEmail').value.trim();
+        let password = document.getElementById('loginPassword').value.trim();
+        let role = document.getElementById('role').value.trim();
 
         // Validate fields
         if (!username || !userEmail || !password || !role) {
@@ -75,20 +75,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Check for valid username and password
-        let patient = users.find(patient => patient.username === username && patient.password === password && patient.role === 'patient');
-        console.log('Patient', patient)
-        let dr = users.find(dr => dr.username === username && dr.password === password && dr.role === 'doctor');
-        console.log('Dr', dr)
+        let user = users.find(user => user.username === username && user.password === password && user.role === role);
 
-        if (patient) {
-
-            localStorage.setItem('loggedInPatient', JSON.stringify(patient));
+        if (user) {
+            localStorage.setItem('loggedInUser', JSON.stringify(user));
             alert('Login successful');
-            window.location.href = '/html/dashboard/patient/patientDashboard.html';
-        } else if(dr) {
-            localStorage.setItem('loggedInDr', JSON.stringify(dr));
-            alert('Login successful');
-            window.location.href = '/html/dashboard/dr/drDashboard.html';
+            if (role === 'patient') {
+                window.location.href = '/html/dashboard/patient/patientFrame.html';
+            } else if (role === 'doctor') {
+                window.location.href = '/html/dashboard/dr/drFrame.html';
+            }
         } else {
             document.getElementById('loginError').textContent = 'Invalid username or password';
         }
