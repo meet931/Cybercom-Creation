@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const bloodGroup = document.getElementById('txtBloodGroup');
     const division = document.getElementById('division-select');
     const drList = document.getElementById('doctor-select');
-    const date = document.getElementById('appointmentData');
+    const date = document.getElementById('appointmentDate');
+    const time = document.getElementById('appointmentTime');
     const bookAppointmentBtn = document.getElementById('addBtn');
 
     // By default, add button is disabled
@@ -38,8 +39,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const addedDivision = division.options[division.selectedIndex].text;
         const addedDrList = drList.options[drList.selectedIndex].text;
         const addedDateValue = date.value;
+        const addedTimeValue = time.value;
 
-        if (nameValue && addedPhone && addedDivision && addedBloodGroup && addedDrList && addedDateValue) {
+        if (nameValue && addedPhone && addedDivision && addedBloodGroup && addedDrList && addedDateValue && addedTimeValue) {
             console.log("Form submitted. Adding patient to local storage...");
 
             const patientDetails = {
@@ -48,7 +50,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 'BloodGroup': addedBloodGroup,
                 'Division': addedDivision,
                 'Doctor': addedDrList,
-                'AppointmentDate': addedDateValue
+                'AppointmentDate': addedDateValue,
+                'AppointmentTime': addedTimeValue
             };
 
             // Store patient in local storage
@@ -87,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <td class="patient-division">${patientDetails.Division}</td>
                 <td class="patient-doctor">${patientDetails.Doctor}</td>
                 <td class="patient-appointment-date">${patientDetails.AppointmentDate}</td>
+                <td class="patient-appointment-time">${patientDetails.AppointmentTime}</td>
                 <td>pending</td>
                 <td>
                     <button class="cancel-appointment-btn" data-index="${index}">Cancel</button>

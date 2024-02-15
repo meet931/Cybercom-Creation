@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <td>${patientDetails.Name}</td>
             <td>${patientDetails.AppointmentDate}</td>
             <td>${patientDetails.PhoneNumber}</td>
-            <td>${patientDetails.AppointmentDate}</td>
+            <td>${patientDetails.AppointmentTime}</td>
             <td id='action${index}'>
                 <button class="accept" id="acceptButton${index}" onclick="accept(${index})">Accept</button>
                 <button class="decline" onclick="decline(${index})">Decline</button>
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <td>${patientDetails.Name}</td>
                 <td>${patientDetails.AppointmentDate}</td>
                 <td>${patientDetails.PhoneNumber}</td>
-                <td>${patientDetails.AppointmentDate}</td>
+                <td>${patientDetails.AppointmentTime}</td>
             `;
             approvedPatientList.appendChild(row);
         });

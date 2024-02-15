@@ -24,7 +24,8 @@ form {
 
 input[type="text"],
 input[type="number"],
-input[type="datetime-local"],
+input[type="date"],
+input[type="time"],
 button {
     width: 97%;
     padding: 10px;
