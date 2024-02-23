@@ -27,11 +27,6 @@ header {
     font-size: 24px;
 }
 
-.listProduct .item img {
-    width: 90%;
-    filter: drop-shadow(rgba(0, 0, 0, 0.3) 0 50px 20px #0009);
-}
-
 .listProduct {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -39,15 +34,26 @@ header {
     margin: 7rem 0;
 }
 
+.listProduct .item img {
+    width: 90%;
+    height: 50%;
+    filter: drop-shadow(0 7px 22px #0009);
+    border-radius: 5px;
+}
+
+
 .listProduct .item {
     background-color: #EEEEE6;
     padding: 20px;
     border-radius: 20px;
+    width: 250px;
+    height: 300px;
 }
 
 .listProduct .item h2 {
     font-weight: 500;
     font-size: large;
+    margin-top: 10px;
 }
 
 .listProduct .item .price {
@@ -92,25 +98,26 @@ header {
 }
 
 #sorting {
-    margin-left: auto; 
+    margin-left: auto;
 }
 
 #itemSorting {
     padding: 5px;
     border-radius: 5px;
     position: relative;
-    right: 26rem;
+    right: 16rem;
 }
 
 #txtSearch {
     padding: 8px;
+    padding-right: 12rem;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 16px;
     outline: none;
     width: 68%;
     position: relative;
-    left: 26rem;
+    left: 20rem;
 }
 
 #searchBtn {
@@ -122,10 +129,27 @@ header {
     cursor: pointer;
     transition: background-color 0.3s ease;
     position: relative;
-    left: 26rem;
+    left: 21rem;
 }
 
 #searchBtn:hover {
+    background-color: #0056b3;
+}
+
+#addBtn {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    right: 2rem;
+    bottom: 0.5rem;
+}
+
+#addBtn:hover {
     background-color: #0056b3;
 }
 
@@ -158,4 +182,82 @@ footer {
 
 .pagination a:hover:not(.active) {
     background-color: #ddd;
+}
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #dfdfd8;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #0b0a0a;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidenav form {
+    padding: 20px;
+    color: white;
+}
+
+.sidenav label {
+    display: block;
+    margin-bottom: 10px;
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: left;
+}
+
+.sidenav input[type="text"],
+.sidenav input[type="number"],
+.sidenav input[type="submit"] {
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+    font-size: 16px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.sidenav input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.sidenav input[type="submit"]:hover {
+    background-color: #007bff;
 }

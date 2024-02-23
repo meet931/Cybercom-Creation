@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>CRUD with API</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD with API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
 
     <div class="container">
@@ -17,7 +19,7 @@
                     <input type="text" placeholder="Search" id="txtSearch">
                     <button id="searchBtn" onclick="searchItem()">Search</button>
                 </div>
-    
+
                 <div id="sorting">
                     <select name="sorting" id="itemSorting">
                         <option value="select">---------- sort by ----------</option>
@@ -31,6 +33,28 @@
                         </optgroup>
                     </select>
                 </div>
+
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <form id="productForm">
+                        <label for="imageLink">Image Link:</label>
+                        <input type="text" id="imageLink" name="imageLink" required>
+
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title" required>
+
+                        <label for="rating">Rating:</label>
+                        <input type="number" id="rating" name="rating" min="1" max="5" required>
+
+                        <label for="price">Price:</label>
+                        <input type="number" id="price" name="price" min="0" step="0.01" required>
+
+                        <input type="submit" value="Add" onclick="addProduct()">
+                    </form>
+                </div>
+
+                <span onclick="openNav()"><button id="addBtn" onclick="addProduct()">Add</button></span>
+
             </div>
         </header>
         <div class="listProduct">
