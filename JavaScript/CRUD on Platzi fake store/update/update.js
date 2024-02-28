@@ -28,35 +28,49 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(event);
         event.preventDefault();
 
-        const updateProduct = {
-            title: document.getElementById('txtproductTitle').value,
-            price: document.getElementById('numProductPrice').value,
-            description: document.getElementById('txtareaDescription').value,
-            images: document.getElementById('imgLink').value
-                .split(",")
-                .map(function (url) {
-                  return url.trim();
-                }),
-        };
-
-        fetch('https://api.escuelajs.co/api/v1/products/' + productId, {
-            method: "PUT",
-            headers: {
-                "Content-type": 'application/json'
-            },
-            body: JSON.stringify(updateProduct)
-        })
-        .then(response => {
-            console.log(response)
-            if(response.ok) {
-                alert('Product updated successfully..!!');
-                return response.json();
-            } else {
-                console.log('Failed to update..!!')
-            }
-        })
-        .then(data => console.log(data))
-        .catch(error => console.log(error))
+        if (validateForm()) {
+            const updateProduct = {
+                title: document.getElementById('txtproductTitle').value,
+                price: document.getElementById('numProductPrice').value,
+                description: document.getElementById('txtareaDescription').value,
+                images: document.getElementById('imgLink').value
+                    .split(",")
+                    .map(function (url) {
+                      return url.trim();
+                    }),
+            };
+    
+            fetch('https://api.escuelajs.co/api/v1/products/' + productId, {
+                method: "PUT",
+                headers: {
+                    "Content-type": 'application/json'
+                },
+                body: JSON.stringify(updateProduct)
+            })
+            .then(response => {
+                console.log(response)
+                if(response.ok) {
+                    alert('Product updated successfully..!!');
+                    return response.json();
+                } else {
+                    console.log('Failed to update..!!')
+                }
+            })
+            .then(data => console.log(data))
+            .catch(error => console.log(error))
+        }
     });
 
+    function validateForm() {
+        const title = document.getElementById('txtproductTitle').value.trim();
+        const price = document.getElementById('numProductPrice').value.trim();
+        const description = document.getElementById('txtareaDescription').value.trim();
+        const imgLink = document.getElementById('imgLink').value.trim();
+
+        if (title === '' || price === '' || description === '' || imgLink === '') {
+            return false;
+        }
+
+        return true;
+    }
 });

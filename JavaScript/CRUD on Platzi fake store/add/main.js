@@ -25,6 +25,7 @@ document.getElementById('addForm').addEventListener('submit', (event) => {
     const txtareaDescription = document.getElementById('txtareaDescription').value;
     const imgLink = document.getElementById('imgLink').value;
 
+    if(title || price || txtareaDescription || imgLink) {
         const addedProduct = {
             "title": title,
             "price": price,
@@ -48,6 +49,6 @@ document.getElementById('addForm').addEventListener('submit', (event) => {
             alert('Product added succefully...!!');
         })
         .catch(error => console.log(error))
-
+    }
 
 });
