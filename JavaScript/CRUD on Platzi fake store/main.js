@@ -39,13 +39,13 @@ const displayProducts = (products) => {
     const endIndex = currentPage * productsPerPage;
     const paginatedProducts = products.slice(startIndex, endIndex);
 
-    console.log(products)
+    // console.log(products)
 
     listProduct.innerHTML = '';
 
     if (paginatedProducts.length > 0) {
         paginatedProducts.forEach(product => {
-            console.log(product)
+            // console.log(product)
             let newProduct = document.createElement('div');
             newProduct.dataset.id = Date.now();
             newProduct.classList.add('item');
@@ -169,11 +169,11 @@ const fetchCategories = () => {
         return response.json();
     })
     .then(categories => {
-        console.log(categories);
+        // console.log(categories);
         const filterByCategory = document.getElementById('filterByCategory');
         categories.forEach((category) => {
             const option = document.createElement('option');
-            option.value = category.id;
+            option.value = category.name;
             option.textContent = category.name;
             filterByCategory.appendChild(option);
         });
@@ -185,13 +185,21 @@ fetchCategories();
 document.getElementById('filterByCategory').addEventListener('change', function () {
 
     console.log('filter');
-    let filteredProducts = products;
+    // let filteredProducts = products;
     let categorySelected = document.getElementById('filterByCategory').value;
-    if(categorySelected !== '') {
+    let filteredProducts;
+
+
+    if (categorySelected !== '') {
+        console.log(products)
+        console.log(categorySelected)
+        
         filteredProducts = products.filter((product) => {
-            return product.category.name == categorySelected;
+            return product.category && product.category.name === categorySelected;
         });
+        console.log(filteredProducts)
     } else {
+
         // If no category is selected, show all products
         filteredProducts = products;
     }
