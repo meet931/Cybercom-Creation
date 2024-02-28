@@ -27,6 +27,7 @@ const getDataUsingFetch = () => {
         .then(data => {
             // console.log(data)
             products = data
+            filteredProducts = data
             displayProducts(products);
         })
         .catch(error => console.log(error));
@@ -88,7 +89,7 @@ const updatePagination = (totalProducts) => {
     previousLink.textContent = "<<";
     previousLink.href = '#';
     previousLink.addEventListener('click', () => {
-        if(currentPage > 1) {
+        if (currentPage > 1) {
             currentPage--;
             displayProducts(filteredProducts);
         }
@@ -116,7 +117,7 @@ const updatePagination = (totalProducts) => {
     nextLink.textContent = '>>';
     nextLink.href = '#';
     nextLink.addEventListener('click', () => {
-        if(currentPage < totalPages) {
+        if (currentPage < totalPages) {
             currentPage++;
             displayProducts(filteredProducts);
         }
@@ -124,74 +125,77 @@ const updatePagination = (totalProducts) => {
     pagination.appendChild(nextLink);
 }
 
+const sortProduct = () => {
+    console.log(filteredProducts)
+    const sortBy = document.getElementById('itemSorting').value;
+    // console.log(sortBy)
+    if (sortBy === 'priceLowToHigh') {
+        filteredProducts.sort((a, b) => a.price - b.price);
+    } else if (sortBy === 'priceHighToLow') {
+        filteredProducts.sort((a, b) => b.price - a.price);
+    } else if (sortBy === 'a-z') {
+        // console.log(filteredProducts)
+        filteredProducts.sort((a, b) => a.title.localeCompare(b.title));
+        // console.log(filteredProducts)
+    } else if (sortBy === 'z-a') {
+        filteredProducts.sort((a, b) => b.title.localeCompare(a.title));
+    }
+
+    currentPage = 1;
+    updatePagination(filteredProducts.length);
+    displayProducts(filteredProducts)
+}
+
 
 // SEARCHING PRODUCT
 const searchItem = () => {
     let txtSearch = document.getElementById('txtSearch').value.trim().toLowerCase();
 
-    fetch('https://api.escuelajs.co/api/v1/products')
-        .then(response => response.json())
-        .then(data => {
-            filteredProducts = data.filter(product => {
-        
-                return product.title.toLowerCase().includes(txtSearch) ||
-                    product.description.toLowerCase().includes(txtSearch) ||
-                    (product.category && typeof product.category.name === 'string' && product.category.name.toLowerCase().includes(txtSearch));
-            });
+    // console.log(filteredProducts)
 
-            // SORTING
-            const sortBy = document.getElementById('itemSorting').value;
+    filteredProducts = products.filter(product => {
+        return product.title.toLowerCase().includes(txtSearch) ||
+            product.description.toLowerCase().includes(txtSearch) ||
+            (product.category && typeof product.category.name === 'string' && product.category.name.toLowerCase().includes(txtSearch));
+    })
 
-            // for price
-            if (sortBy === 'priceLowToHigh') {
-                filteredProducts.sort((a, b) => a.price - b.price);
-            } else if (sortBy === 'priceHighToLow') {
-                filteredProducts.sort((a, b) => b.price - a.price);
-            } else if (sortBy === 'a-z') {
-                filteredProducts.sort((a, b) => a.title.localeCompare(b.title));
-            } else if (sortBy === 'z-a') {
-                filteredProducts.sort((a, b) => b.title.localeCompare(a.title));
-            }
-
-            displayProducts(filteredProducts);
-        })
-        .catch(error => console.log(error));
+    displayProducts(filteredProducts);
 };
 
 
 
 // SORTING
-document.getElementById('sorting').addEventListener('change', function filterByCategory() {
-    searchItem();
+document.getElementById('sorting').addEventListener('change', () => {
+    sortProduct();
 });
 
 
 // FETCHING CATEGORIES
 const fetchCategories = () => {
     fetch('https://api.escuelajs.co/api/v1/categories')
-    .then(response => {
-        if(!response.ok) {
-            throw new Error('Failed to fetch data');
-        }
-        return response.json();
-    })
-    .then(categories => {
-        // console.log(categories);
-        const filterByCategory = document.getElementById('filterByCategory');
-        categories.forEach((category) => {
-            const option = document.createElement('option');
-            option.value = category.name;
-            option.textContent = category.name;
-            filterByCategory.appendChild(option);
-        });
-    })
-    .then()
-    .catch(error => console.log(error))
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch data');
+            }
+            return response.json();
+        })
+        .then(categories => {
+            // console.log(categories);
+            const filterByCategory = document.getElementById('filterByCategory');
+            categories.forEach((category) => {
+                const option = document.createElement('option');
+                option.value = category.name;
+                option.textContent = category.name;
+                filterByCategory.appendChild(option);
+            });
+        })
+        .then()
+        .catch(error => console.log(error))
 }
 fetchCategories();
 document.getElementById('filterByCategory').addEventListener('change', function () {
 
-    console.log('filter');
+    // console.log('filter');
     // let filteredProducts = products;
     let categorySelected = document.getElementById('filterByCategory').value;
 
@@ -199,11 +203,11 @@ document.getElementById('filterByCategory').addEventListener('change', function 
     if (categorySelected !== '') {
         // console.log(products)
         // console.log(categorySelected)
-        
+
         filteredProducts = products.filter((product) => {
             return product.category && product.category.name === categorySelected;
         });
-        console.log(filteredProducts)
+        console.log(filteredProducts);
     } else {
 
         // If no category is selected, show all products
@@ -211,9 +215,7 @@ document.getElementById('filterByCategory').addEventListener('change', function 
     }
     currentPage = 1;
     updatePagination(filteredProducts.length);
-    displayProducts(filteredProducts)
-
-
+    displayProducts(filteredProducts);
 });
 
 // FOR REMOVING PRODUCTS FROM THE SERVER
@@ -221,19 +223,19 @@ const removeProduct = (id) => {
     console.log(id)
     const confirmed = confirm('Are you sure you want to delete this product?');
 
-    if(confirmed) {
+    if (confirmed) {
         fetch(`https://api.escuelajs.co/api/v1/products/${id}`, {
             method: 'DELETE',
         })
-        .then(res => {
-            if (res.ok) {
-                console.log('Item is deleted successfully....')
-                location.reload();
-            } else {
-                console.log('Failed to delete resource.', res.status);
-            }
-        })
-        .catch(error => console.log(error));
+            .then(res => {
+                if (res.ok) {
+                    console.log('Item is deleted successfully....')
+                    location.reload();
+                } else {
+                    console.log('Failed to delete resource.', res.status);
+                }
+            })
+            .catch(error => console.log(error));
     }
 
 }
