@@ -5,6 +5,7 @@ const productsPerPage = 9;
 let currentPage = 1;
 let totalPages = 0;
 let products = [];
+let filteredProducts = [];
 
 
 // FETCHING API URL
@@ -89,7 +90,7 @@ const updatePagination = (totalProducts) => {
     previousLink.addEventListener('click', () => {
         if(currentPage > 1) {
             currentPage--;
-            displayProducts(products);
+            displayProducts(filteredProducts);
         }
     });
     pagination.appendChild(previousLink);
@@ -100,7 +101,7 @@ const updatePagination = (totalProducts) => {
         pageLink.href = '#';
         pageLink.addEventListener('click', () => {
             currentPage = i;
-            displayProducts(products);
+            displayProducts(filteredProducts);
         });
         pagination.appendChild(pageLink);
     }
@@ -111,7 +112,7 @@ const updatePagination = (totalProducts) => {
     nextLink.addEventListener('click', () => {
         if(currentPage < totalPages) {
             currentPage++;
-            displayProducts(products);
+            displayProducts(filteredProducts);
         }
     });
     pagination.appendChild(nextLink);
@@ -125,7 +126,7 @@ const searchItem = () => {
     fetch('https://api.escuelajs.co/api/v1/products')
         .then(response => response.json())
         .then(data => {
-            const filteredProducts = data.filter(product => {
+            filteredProducts = data.filter(product => {
         
                 return product.title.toLowerCase().includes(txtSearch) ||
                     product.description.toLowerCase().includes(txtSearch) ||
@@ -187,12 +188,11 @@ document.getElementById('filterByCategory').addEventListener('change', function 
     console.log('filter');
     // let filteredProducts = products;
     let categorySelected = document.getElementById('filterByCategory').value;
-    let filteredProducts;
 
 
     if (categorySelected !== '') {
-        console.log(products)
-        console.log(categorySelected)
+        // console.log(products)
+        // console.log(categorySelected)
         
         filteredProducts = products.filter((product) => {
             return product.category && product.category.name === categorySelected;
