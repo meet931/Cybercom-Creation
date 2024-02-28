@@ -99,6 +99,12 @@ const updatePagination = (totalProducts) => {
         const pageLink = document.createElement('a');
         pageLink.textContent = i;
         pageLink.href = '#';
+
+        // Active page
+        if (i === currentPage) {
+            pageLink.classList.add('active');
+        }
+
         pageLink.addEventListener('click', () => {
             currentPage = i;
             displayProducts(filteredProducts);
