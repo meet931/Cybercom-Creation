@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <a href="/index.html"><button id="backBtn">&#129056; Back</button></a>
+        <form id="addForm">
+            <div class="formContainer">
+                <h1>Add Product</h1>
+                <div class="fields">
+
+                    <!-- Product Title -->
+                    <div class="inputField">
+                        <label for="txtproductTitle">Product Title</label>
+                        <input type="text" id="txtproductTitle" name="txtproductTitle" required>
+                        <div class="error"></div>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="inputField">
+                        <label for="numProductPrice">Price</label>
+                        <input type="number" id="numProductPrice" name="numProductPrice" required>
+                        <div class="error"></div>
+                    </div>
+
+
+                    <!-- Description -->
+                    <div class="inputField">
+                        <label for="txtareaDescription">Description</label>
+                        <textarea id="txtareaDescription" name="txtareaDescription" rows="4" cols="10"
+                            placeholder="Type here"></textarea>
+                        <div class="error"></div>
+                    </div>
+
+                    <!-- Category -->
+                    <div class="inputField">
+                        <label for="selectCategory">Category</label>
+                        <select name="selectCategory" id="selectCategory">
+                            <option value="select">-- Select --</option>
+
+                        </select>
+                    </div>
+
+                    <!-- Image -->
+                    <div class="inputField">
+                        <label for="img">Image Link</label>
+                        <input type="text" id="imgLink" placeholder="Enter image link here">
+                        <div class="error"></div>
+                    </div>
+                    <button id="submit">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="/add/main.js"></script>
+</body>
+
+</html>

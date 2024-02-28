@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD with API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <div class="title">PRODUCT LIST</div>
+
+            <div class="searchingSorting">
+                <div class="search">
+                    <input type="text" placeholder="Search" id="txtSearch">
+                    <button id="searchBtn" onclick="searchItem()">Search</button>
+                </div>
+
+                <div id="sorting">
+                    <select name="sorting" id="itemSorting">
+                        <option value="select">---------- sort by ----------</option>
+                        <optgroup label="Name">
+                            <option value="a-z">A to Z</option>
+                            <option value="z-a">Z to A</option>
+                        </optgroup>
+                        <optgroup label="Price">
+                            <option value="priceLowToHigh">Price: Low to High</option>
+                            <option value="priceHighToLow">Price: High to Low</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div id="filter">
+                    <select name="filter" id="filterByCategory">
+                        <option value="select">Select Filter</option>
+                        
+                    </select>
+                </div>
+                
+                <span><a href="/add/index.html"><button id="addBtn">Add</button></a></span>
+            </div>
+        </header>
+        <div class="listProduct">
+            <!-- product list -->
+        </div>
+    </div>
+    <footer>
+        <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#">1</a>
+            <a class="active" href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">&raquo;</a>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
