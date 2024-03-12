@@ -1,0 +1,2 @@
+-- 9. Write a SQL query to retrieve the names of all customers who have made orders in the "orders" table, along with the total amount they have spent on all orders and the 
+--    average amount they have spent per order.

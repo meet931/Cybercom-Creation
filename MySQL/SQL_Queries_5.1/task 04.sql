@@ -1,0 +1,2 @@
+-- 4. Write a SQL query to retrieve the names and salaries of all employees who have a salary greater than the average salary of all employees in the "employees" table, 
+--    sorted by salary in descending order.

@@ -1,19 +1,7 @@
 CREATE DATABASE SQL_Queries_5_1;
 USE SQL_Queries_5_1;
 
-SELECT * FROM CUSTOMERS;
-SELECT * FROM ORDERS;
-SELECT * FROM ORDER_DETAILS;
-SELECT * FROM EMPLOYEES;
-SELECT * FROM PRODUCTS;
-SELECT * FROM DEPARTMENTS;
-
-DROP TABLE CUSTOMERS;
-DROP TABLE ORDERS;
-DROP TABLE ORDER_DETAILS;
-DROP TABLE EMPLOYEES;
-DROP TABLE PRODUCTS;
-DROP TABLE DEPARTMENTS;
+-- 1. Write a SQL query to retrieve the top 10 customers who have made the most orders in the "orders" table, along with the total number of orders they have made.
 
 CREATE TABLE CUSTOMERS (
     CUSTOMER_ID INT PRIMARY KEY,
@@ -38,7 +26,7 @@ CREATE TABLE ORDER_DETAILS (
     FOREIGN KEY (PRODUCT_ID) REFERENCES PRODUCTS(PRODUCT_ID)
 );
 
-CREATE TABLE EMPLOYEES (
+CREATE TABLE EMPLOYEEST1 (
     EMPLOYEE_ID INT PRIMARY KEY,
     EMPLOYEE_NAME VARCHAR(255),
     DEPARTMENT_ID INT,
@@ -58,7 +46,6 @@ CREATE TABLE DEPARTMENTS (
     MANAGER_ID INT,
     LOCATION VARCHAR(255)
 );
-
 
 INSERT INTO CUSTOMERS (CUSTOMER_ID, CUSTOMER_NAME, COUNTRY_NAME)
 VALUES
@@ -129,7 +116,7 @@ VALUES
     (219, 119, 3, 80.00),
     (220, 120, 1, 180.00);
 
-INSERT INTO EMPLOYEES (EMPLOYEE_ID, EMPLOYEE_NAME, DEPARTMENT_ID, SALARY)
+INSERT INTO EMPLOYEEST1 (EMPLOYEE_ID, EMPLOYEE_NAME, DEPARTMENT_ID, SALARY)
 VALUES
     (1, 'Michael Johnson', 1, 50000.00),
     (2, 'Emily Brown', 2, 60000.00),
@@ -165,92 +152,13 @@ VALUES
 SELECT * FROM CUSTOMERS;
 SELECT * FROM ORDERS;
 SELECT * FROM ORDER_DETAILS;
-SELECT * FROM EMPLOYEES;
+SELECT * FROM EMPLOYEEST1;
 SELECT * FROM PRODUCTS;
 SELECT * FROM DEPARTMENTS;
 
 
--- 1. Write a SQL query to retrieve the top 10 customers who have made the most orders in the "orders" table, along with the total number of orders they have made.
 SELECT C.CUSTOMER_ID, C.CUSTOMER_NAME, COUNT(O.CUSTOMER_ID) AS "TOTAL ORDERS" FROM CUSTOMERS C
 LEFT JOIN ORDERS O ON C.CUSTOMER_ID = O.CUSTOMER_ID
 GROUP BY C.CUSTOMER_ID, C.CUSTOMER_NAME 
 ORDER BY COUNT(CUSTOMER_ID) DESC
 LIMIT 10;
-
--- --------------------------------------------------------------
-
-CREATE TABLE EMPLOYEES (
-    EMPLOYEE_ID INT PRIMARY KEY,
-    EMPLOYEE_NAME VARCHAR(50)
-);
-
-CREATE TABLE ORDER_DETAILST2 (
-    ORDER_ID INT PRIMARY KEY,
-    EMPLOYEE_ID INT,
-    AMOUNT DECIMAL(10, 2),
-    FOREIGN KEY (EMPLOYEE_ID) REFERENCES EMPLOYEES(EMPLOYEE_ID)
-);
-
-INSERT INTO EMPLOYEES (EMPLOYEE_ID, EMPLOYEE_NAME) VALUES
-(1, 'John'),
-(2, 'Alice'),
-(3, 'Bob'),
-(4, 'Eve');
-
-INSERT INTO ORDER_DETAILST2 (ORDER_ID, EMPLOYEE_ID, AMOUNT) VALUES
-(101, 1, 120000.00),
-(102, 2, 95000.00),
-(103, 3, 130000.00),
-(104, 1, 80000.00),
-(105, 4, 110000.00),
-(106, 2, 105000.00),
-(107, 1, 140000.00),
-(108, 3, 90000.00),
-(109, 4, 115000.00),
-(110, 2, 125000.00);
-
-SELECT * FROM EMPLOYEES;
-SELECT * FROM ORDER_DETAILST2;
-DROP TABLE ORDERST2;
-
--- 2. Write a SQL query to retrieve the names of all employees who have sold more than $100,000 worth of products in the "order_details" table, sorted by the amount 
---    sold in descending order.
-SELECT E.EMPLOYEE_NAME, COUNT(O.EMPLOYEE_ID) AS 'TOTAL ORDERS', SUM(O.AMOUNT) AS 'TOTAL PRICE' FROM EMPLOYEES E
-LEFT JOIN ORDER_DETAILST2 O ON E.EMPLOYEE_ID = O.EMPLOYEE_ID
-GROUP BY E.EMPLOYEE_NAME
-HAVING SUM(O.AMOUNT) > 100000
-ORDER BY SUM(O.AMOUNT) DESC;
-  
--- ---------------------------------------------------------------------  
-
--- 3. Write a SQL query to retrieve the names of all customers who have made orders in the "orders" table, along with the total amount they have spent on all orders 
---    and the total amount they have spent on orders made in the last 30 days.
-SELECT C.CUSTOMER_NAME, COUNT(O.CUSTOMER_ID) AS 'TOTAL ORDERS', 
-SUM(O.TOTAL_AMOUNT) AS 'TOTAL AMOUNT SPENT' ,
-SUM(CASE 
-		WHEN O.ORDER_DATE >= DATE_SUB(CURRENT_DATE, INTERVAL 30 DAY) THEN O.TOTAL_AMOUNT 
-        ELSE 0 
-	END) AS 'AMOUNT SPENT LAST 30 DAYS'
-FROM CUSTOMERS C
-JOIN ORDERS O ON C.CUSTOMER_ID = O.CUSTOMER_ID
-GROUP BY C.CUSTOMER_NAME;
-  
--- 4. Write a SQL query to retrieve the names and salaries of all employees who have a salary greater than the average salary of all employees in the "employees" table, 
---    sorted by salary in descending order.
-  
--- 5. Write a SQL query to retrieve the names of all customers who have made orders in the "orders" table, but have not made any orders in the last 90 days.
-  
--- 6. Write a SQL query to retrieve the names and salaries of all employees who have a salary greater than the minimum salary of their department in the "employees" table, 
---    sorted by department ID and then by salary in descending order.
-  
--- 7. Write a SQL query to retrieve the names and salaries of the five highest paid employees in each department of the "employees" table, sorted by department ID and then 
---    by salary in descending order.
-  
--- 8. Write a SQL query to retrieve the names of all customers who have made orders in the "orders" table, but have not made any orders for products in the "products" table 
---    with a price greater than $100.
-  
--- 9. Write a SQL query to retrieve the names of all customers who have made orders in the "orders" table, along with the total amount they have spent on all orders and the 
---    average amount they have spent per order.
-  
--- 10. Write a SQL query to retrieve the names of all products in the "products" table that have been ordered by customers in more than one country, along with the names of 
---     the countries where the products have been ordered.

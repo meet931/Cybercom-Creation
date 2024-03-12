@@ -1,0 +1,2 @@
+-- 10. Write a SQL query to retrieve the names of all products in the "products" table that have been ordered by customers in more than one country, along with the names of 
+--     the countries where the products have been ordered.

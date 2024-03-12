@@ -1,0 +1,1 @@
+-- 5. Write a SQL query to retrieve the names of all customers who have made orders in the "orders" table, but have not made any orders in the last 90 days.

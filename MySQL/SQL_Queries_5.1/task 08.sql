@@ -1,0 +1,2 @@
+-- 8. Write a SQL query to retrieve the names of all customers who have made orders in the "orders" table, but have not made any orders for products in the "products" table 
+--    with a price greater than $100.
