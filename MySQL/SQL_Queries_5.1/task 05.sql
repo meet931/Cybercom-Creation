@@ -1,1 +1,9 @@
 -- 5. Write a SQL query to retrieve the names of all customers who have made orders in the "orders" table, but have not made any orders in the last 90 days.
+
+SELECT * FROM CUSTOMERS;
+SELECT * FROM ORDERS;
+
+SELECT C.CUSTOMER_NAME, COUNT(O.CUSTOMER_ID) AS 'TOTAL ORDERS' FROM CUSTOMERS C
+LEFT JOIN ORDERS O ON C.CUSTOMER_ID = O.CUSTOMER_ID
+WHERE O.ORDER_DATE <= DATE_SUB(CURRENT_DATE, INTERVAL 90 DAY) OR O.ORDER_DATE IS NULL
+GROUP BY C.CUSTOMER_NAME;
