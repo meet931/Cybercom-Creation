@@ -1,0 +1,73 @@
+-- 3. Write a SQL query to retrieve the names of all customers who have placed orders for products in both the "Electronics" and "Clothing" categories.
+--    The output should only include customers who have ordered products in both categories.
+
+CREATE TABLE CUSTOMERSQ3 (
+    CUSTOMERID INT PRIMARY KEY,
+    NAME VARCHAR(50),
+    EMAIL VARCHAR(100)
+);
+
+CREATE TABLE ORDERSQ3 (
+    ORDERID INT PRIMARY KEY,
+    CUSTOMERID INT,
+    ORDERDATE DATE,
+    FOREIGN KEY (CUSTOMERID) REFERENCES CUSTOMERSQ3(CUSTOMERID)
+);
+
+CREATE TABLE PRODUCTSQ3 (
+    PRODUCTID INT PRIMARY KEY,
+    NAME VARCHAR(50),
+    CATEGORY VARCHAR(50),
+    PRICE DECIMAL(10, 2)
+);
+
+CREATE TABLE ORDERDETAILSQ3 (
+    ORDERDETAILID INT PRIMARY KEY,
+    ORDERID INT,
+    PRODUCTID INT,
+    QUANTITY INT,
+    FOREIGN KEY (ORDERID) REFERENCES ORDERSQ3(ORDERID),
+    FOREIGN KEY (PRODUCTID) REFERENCES PRODUCTSQ3(PRODUCTID)
+);
+
+INSERT INTO CUSTOMERSQ3 (CUSTOMERID, NAME, EMAIL) VALUES
+(1, 'John Doe', 'john@example.com'),
+(2, 'Jane Smith', 'jane@example.com'),
+(3, 'Emily White', 'emily@example.com'),
+(4, 'Michael Johnson', 'michael@example.com');
+
+INSERT INTO ORDERSQ3 (ORDERID, CUSTOMERID, ORDERDATE) VALUES
+(1, 1, '2024-03-13'),
+(2, 2, '2024-03-12'),
+(3, 1, '2024-03-10'),
+(4, 3, '2024-03-11');
+
+INSERT INTO PRODUCTSQ3 (PRODUCTID, NAME, CATEGORY, PRICE) VALUES
+(1, 'Laptop', 'Electronics', 999.99),
+(2, 'Smartphone', 'Electronics', 599.99),
+(3, 'T-shirt', 'Clothing', 19.99),
+(4, 'Headphones', 'Electronics', 49.99),
+(5, 'Dress', 'Clothing', 59.99),
+(6, 'Sneakers', 'Footwear', 79.99);
+
+INSERT INTO ORDERDETAILSQ3 (ORDERDETAILID, ORDERID, PRODUCTID, QUANTITY) VALUES
+(1, 1, 1, 2),
+(2, 2, 2, 1),
+(3, 2, 1, 1),
+(4, 3, 3, 2),
+(5, 4, 4, 1),
+(6, 4, 5, 1),
+(7, 4, 6, 1);
+
+SELECT * FROM CUSTOMERSQ3;
+SELECT * FROM ORDERSQ3;
+SELECT * FROM PRODUCTSQ3;
+SELECT * FROM ORDERDETAILSQ3;
+
+SELECT C.NAME AS CUSTOMER_NAME FROM CUSTOMERSQ3 C
+JOIN ORDERSQ3 O ON C.CUSTOMERID = O.CUSTOMERID
+JOIN ORDERDETAILSQ3 OD ON O.ORDERID = OD.ORDERID
+JOIN PRODUCTSQ3 P ON OD.PRODUCTID = P.PRODUCTID
+WHERE P.CATEGORY IN ('Electronics', 'Clothing')
+GROUP BY C.NAME
+HAVING COUNT(DISTINCT P.CATEGORY) = 2;
