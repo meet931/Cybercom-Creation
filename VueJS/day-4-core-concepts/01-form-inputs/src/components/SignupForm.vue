@@ -79,7 +79,7 @@ export default {
     data() {
         return {
             // we are saving all data using v-model to here
-            fNme: '',
+            fName: '',
             email: '',
             role: '',
             password: '',
