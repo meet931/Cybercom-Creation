@@ -1,4 +1,4 @@
-# 02-the-composition-api-i
+# 01-the-composition-api-ii
 
 ## Project setup
 ```
