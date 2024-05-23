@@ -83,7 +83,7 @@ sr.reveal(".project-img", { interval: 200 });
     element.classList.toggle("dark-mode")
   }
 
-  var messageArr = ["Full Stack Developer", "Frontend Developer", "Backend Developer"];
+  var messageArr = ["Software Developer", "Frontend Developer"];
   var textPosition = 0;
   var speed = 200;
 
