@@ -398,6 +398,17 @@ section.about {
   transition: 1s ease;
 }
 
+.work-experience-text {
+  font-weight: 100;
+  font-size: 14px;  
+}
+
+.work-experience-div {
+  margin-left: 100px;
+  margin-right: 100px;
+  padding: 10px 0px 10px 0px;
+}
+
 .work-name {
   margin: 6px;
   display: flex;
@@ -481,12 +492,21 @@ img.man-icons {
   align-items: center;
 }
 
-
 .skills-names:hover {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
   transition: 1s ease;
+}
+
+.skills-data .skills-names img {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: 1s ease;
+  width: 25px;
+  height: 23px;  
+  margin-right: 1.4rem;
 }
 
 .skills-bar {
@@ -589,6 +609,12 @@ img.man-icons {
 .project-btns {
   position: absolute;
   bottom: 0;
+}
+
+.more-projects {
+  display: flex;
+  justify-content: center;
+  margin: 42px 0px 42px 0px;
 }
 
 /* ===== CONTACT =====*/
