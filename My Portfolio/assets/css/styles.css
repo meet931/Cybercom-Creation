@@ -70,7 +70,6 @@ body {
 .dark-mode {
   background-color: black;
   color: var(--third-color);
-
 }
 
 #jobTitle {
